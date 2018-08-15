@@ -19,21 +19,12 @@
     return view('test');
 });*/
 
-Route::get('/', function () {
-    return view('log');
-});
+
 
 Route::get('/index', function () {
     return view('index');
 });
 
-Route::get('/listP', function () {
-    return view('listPage');
-});
-
-Route::get('/detail', function () {
-    return view('detail');
-});
 
 
 
@@ -43,10 +34,21 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+//開始
+Route::get('/', function () {
+    return view('log');
+});
+
+
+
 //登陸
 Route::get('/logC', 'LogController@verify');
 
 
+//訂單
 
 Route::get('/detail', 'IndentController@detail');
+
+Route::get('/list', 'IndentController@list');
 

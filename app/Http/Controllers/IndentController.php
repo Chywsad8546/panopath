@@ -18,4 +18,11 @@ class IndentController extends Controller {
         return view('detail',[
         ]);
     }
+
+
+    public function list()
+    {
+        return view('listPage',[
+        ]);
+    }
 }

@@ -271,10 +271,7 @@
                     <li class="devider"></li>
                     <li> <a href="forms.html" class="waves-effect"><i class="mdi mdi-clipboard-text fa-fw"></i> <span class="hide-menu">Forms<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="form-basic.html"><i class="fa-fw">B</i><span class="hide-menu">Basic Forms</span></a></li>
-                            <li><a href="form-layout.html"><i class="fa-fw">L</i><span class="hide-menu">Form Layout</span></a></li>
-                            <li><a href="form-advanced.html"><i class="fa-fw">A</i><span class="hide-menu">Form Addons</span></a></li>
-                            <li><a href="form-material-elements.html"><i class="fa-fw">M</i><span class="hide-menu">Form Material</span></a></li>
+                            <li><a  class="active"href="list"><i class="fa-fw">B</i><span class="hide-menu">IndentList</span></a></li>
                         </ul>
                     </li>
                 </ul>

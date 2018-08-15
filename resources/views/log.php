@@ -58,7 +58,7 @@ mysqli_close($mysqli);*/
     <section id="wrapper" class="login-register">
         <div class="login-box login-sidebar bg-theme-dark">
             <div class="white-box">
-                <form class="form-horizontal form-material" id="loginform" action="index.html">
+                <form class="form-horizontal form-material" id="loginform" action="logC">
                     <a href="javascript:void(0)" class="text-center db"><img src="img/admin-logo.png" alt="Home" />
                         <br/><img src="img/admin-text.png" alt="Home" /></a>
                     <div class="form-group m-t-40">

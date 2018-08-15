@@ -327,7 +327,7 @@
                                             <tr>
                                                 <td>1</td>
                                                 <td>
-                                                    <a href="contact-detail.html"><img src="img/users/genu.jpg" alt="user" class="img-circle" /> Genelia Deshmukh</a>
+                                                    <a href="detail"><img src="img/users/genu.jpg" alt="user" class="img-circle" /> Genelia Deshmukh</a>
                                                 </td>
                                                 <td>genelia@gmail.com</td>
                                                 <td>+123 456 789</td>
@@ -342,7 +342,7 @@
                                             <tr>
                                                 <td>2</td>
                                                 <td>
-                                                    <a href="contact-detail.html"><img src="img/users/arijit.jpg" alt="user" class="img-circle" /> Arijit Singh</a>
+                                                    <a href="detail"><img src="img/users/arijit.jpg" alt="user" class="img-circle" /> Arijit Singh</a>
                                                 </td>
                                                 <td>arijit@gmail.com</td>
                                                 <td>+234 456 789</td>
@@ -357,7 +357,7 @@
                                             <tr>
                                                 <td>3</td>
                                                 <td>
-                                                    <a href="contact-detail.html"><img src="img/users/govinda.jpg" alt="user" class="img-circle" /> Govinda jalan</a>
+                                                    <a href="detail"><img src="img/users/govinda.jpg" alt="user" class="img-circle" /> Govinda jalan</a>
                                                 </td>
                                                 <td>govinda@gmail.com</td>
                                                 <td>+345 456 789</td>
@@ -372,7 +372,7 @@
                                             <tr>
                                                 <td>4</td>
                                                 <td>
-                                                    <a href="contact-detail.html"><img src="img/users/hritik.jpg" alt="user" class="img-circle" /> Hritik Roshan</a>
+                                                    <a href="detail"><img src="img/users/hritik.jpg" alt="user" class="img-circle" /> Hritik Roshan</a>
                                                 </td>
                                                 <td>hritik@gmail.com</td>
                                                 <td>+456 456 789</td>
@@ -387,7 +387,7 @@
                                             <tr>
                                                 <td>5</td>
                                                 <td>
-                                                    <a href="contact-detail.html"><img src="img/users/john.jpg" alt="user" class="img-circle" /> John Abraham</a>
+                                                    <a href="detail"><img src="img/users/john.jpg" alt="user" class="img-circle" /> John Abraham</a>
                                                 </td>
                                                 <td>john@gmail.com</td>
                                                 <td>+567 456 789</td>
@@ -402,7 +402,7 @@
                                             <tr>
                                                 <td>6</td>
                                                 <td>
-                                                    <a href="contact-detail.html"><img src="img/users/pawandeep.jpg" alt="user" class="img-circle" /> Pawandeep kumar</a>
+                                                    <a href="detail"><img src="img/users/pawandeep.jpg" alt="user" class="img-circle" /> Pawandeep kumar</a>
                                                 </td>
                                                 <td>pawandeep@gmail.com</td>
                                                 <td>+678 456 789</td>
@@ -417,7 +417,7 @@
                                             <tr>
                                                 <td>7</td>
                                                 <td>
-                                                    <a href="contact-detail.html"><img src="img/users/ritesh.jpg" alt="user" class="img-circle" /> Ritesh Deshmukh</a>
+                                                    <a href="detail"><img src="img/users/ritesh.jpg" alt="user" class="img-circle" /> Ritesh Deshmukh</a>
                                                 </td>
                                                 <td>ritesh@gmail.com</td>
                                                 <td>+123 456 789</td>
@@ -432,7 +432,7 @@
                                             <tr>
                                                 <td>8</td>
                                                 <td>
-                                                    <a href="contact-detail.html"><img src="img/users/salman.jpg" alt="user" class="img-circle" /> Salman Khan</a>
+                                                    <a href="detail"><img src="img/users/salman.jpg" alt="user" class="img-circle" /> Salman Khan</a>
                                                 </td>
                                                 <td>salman@gmail.com</td>
                                                 <td>+234 456 789</td>
@@ -447,7 +447,7 @@
                                             <tr>
                                                 <td>9</td>
                                                 <td>
-                                                    <a href="contact-detail.html"><img src="img/users/govinda.jpg" alt="user" class="img-circle" /> Govinda jalan</a>
+                                                    <a href="detail"><img src="img/users/govinda.jpg" alt="user" class="img-circle" /> Govinda jalan</a>
                                                 </td>
                                                 <td>govinda@gmail.com</td>
                                                 <td>+345 456 789</td>

@@ -11,15 +11,15 @@
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
-Route::get('/test', function () {
+/*Route::get('/test', function () {
     return view('test');
-});
+});*/
 
-Route::get('/log', function () {
+Route::get('/', function () {
     return view('log');
 });
 
@@ -42,4 +42,11 @@ Route::get('/user',['uses'=>'UserController@test1']);
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//登陸
+Route::get('/logC', 'LogController@verify');
+
+
+
+Route::get('/detail', 'IndentController@detail');
 

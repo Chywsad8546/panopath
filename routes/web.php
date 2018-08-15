@@ -48,7 +48,7 @@ Route::get('/logC', 'LogController@verify');
 
 //訂單
 
-Route::post('/detail', 'IndentController@detail');
+Route::get('/detail', 'IndentController@detail');
 
-Route::post('/list', 'IndentController@list');
+Route::get('/list', 'IndentController@list');
 

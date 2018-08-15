@@ -11,14 +11,19 @@ namespace App\Http\Controllers;
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
+
+//獲取參數
+use Request;
 class LogController extends Controller {
 
     public function verify()
     {
         $student = DB::select("select * from user ");
+        $input=Request::all();
+       /* dd($input);*/
 
         return view('listPage',[
-            'item'=>$student,
+            'item'=>$input,
         ]);
     }
 }

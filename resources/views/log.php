@@ -63,12 +63,12 @@ mysqli_close($mysqli);*/
                         <br/><img src="img/admin-text.png" alt="Home" /></a>
                     <div class="form-group m-t-40">
                         <div class="col-xs-12">
-                            <input class="form-control" type="text" required="" placeholder="Username">
+                            <input class="form-control" name="username" type="text" required="" placeholder="Username">
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-xs-12">
-                            <input class="form-control" type="password" required="" placeholder="Password">
+                            <input class="form-control" type="password" name="pwd" required="" placeholder="Password">
                         </div>
                     </div>
                     <div class="form-group">

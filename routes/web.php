@@ -43,7 +43,7 @@ Route::get('/', function () {
 
 
 //登陸
-Route::get('/logC', 'LogController@verify');
+Route::post('/logC', 'LogController@verify');
 
 
 //訂單

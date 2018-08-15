@@ -13,6 +13,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 
 //獲取參數
+use App\Http\Requests;
 use Request;
 class LogController extends Controller {
 
@@ -21,9 +22,9 @@ class LogController extends Controller {
         $student = DB::select("select * from user ");
         $input=Request::all();
        /* dd($input);*/
-
+        $username= $input['username'];
         return view('listPage',[
-            'item'=>$input,
+            'username'=>$username,
         ]);
     }
 }

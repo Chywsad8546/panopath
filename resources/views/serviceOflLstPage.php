@@ -304,7 +304,7 @@
                                                 <td>05-10-2012</td>
                                                 <td>$3200</td>
                                                 <td>
-                                                    <button type="button" class="btn btn-info update" data-id="1" data-target="#add-contact">更改</button>
+                                                    <button type="button" class="btn btn-info update" data-toggle="modal" data-id="1" data-target="#add-contact">更改</button>
                                                     <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
                                                 </td>
                                             </tr>
@@ -320,14 +320,14 @@
                                                 <td>11-10-2014</td>
                                                 <td>$1800</td>
                                                 <td>
-                                                    <button type="button" class="btn btn-info update" data-id="2" data-target="#add-contact">更改</button>
+                                                    <button type="button" class="btn btn-info update" data-toggle="modal" data-id="2" data-target="#add-contact">更改</button>
                                                     <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>9</td>
                                                 <td>
-                                                    <a href="/detail"><img src="img/users/govinda.jpg" alt="user" class="img-circle" /> Govinda jalan</a>
+                                                    <a href="/detail"><img src="img/users/govinda.jpg"  alt="user" class="img-circle" /> Govinda jalan</a>
                                                 </td>
                                                 <td>govinda@gmail.com</td>
                                                 <td>+345 456 789</td>
@@ -336,7 +336,7 @@
                                                 <td>12-5-2016</td>
                                                 <td>$100</td>
                                                 <td>
-                                                    <button type="button" class="btn btn-info update" data-id="3" data-target="#add-contact">更改</button>
+                                                    <button type="button" class="btn btn-info update" data-toggle="modal" data-id="3" data-target="#add-contact">更改</button>
                                                     <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
                                                 </td>
                                             </tr>
@@ -355,11 +355,11 @@
                                                             <div class="modal-body">
                                                                 <from class="form-horizontal form-material">
                                                                     <div class="form-group">
-                                                                        <input type="hidden" class="form-control" value="" placeholder="Type name"> </div>
+                                                                        <input type="hidden" class="form-control" value="" >
                                                                         <div class="col-md-12 m-b-20">
                                                                             <input type="text" class="form-control" placeholder="Type name"> </div>
                                                                         <div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" placeholder="Email"> </div>
+                                                                            <input id="uid" type="text" class="form-control" placeholder="Email"> </div>
                                                                         <div class="col-md-12 m-b-20">
                                                                             <input type="text" class="form-control" placeholder="Phone"> </div>
                                                                         <div class="col-md-12 m-b-20">
@@ -506,6 +506,7 @@
         $(this).click(function () {
             var _id = $(this).data('id');
              console.log(_id);
+             $("#uid").val(_id)
         })
     });
 </script>

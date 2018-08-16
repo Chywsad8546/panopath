@@ -1,4 +1,8 @@
 <?php
+
+session_start();
+
+
 $mysqli = mysqli_connect('127.0.0.1', 'root', '1129', 'panopath');
 
 if($mysqli){
@@ -79,6 +83,11 @@ mysqli_close($mysqli);*/
                                 <label for="checkbox-signup"> Remember me </label>
                             </div>
                             <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Forgot pwd?</a> </div>
+                    </div>
+                    <div class="form-group text-center m-t-20">
+                        <div class="col-xs-12">
+                          <p><?php  echo $faild ?></p>
+                        </div>
                     </div>
                     <div class="form-group text-center m-t-20">
                         <div class="col-xs-12">

@@ -23,8 +23,30 @@ class LogController extends Controller {
         $input=Request::all();
        /* dd($input);*/
         $username= $input['username'];
-        return view('listPage',[
-            'username'=>$username,
+        $pwd = $input['pwd'];
+
+
+        if ($pwd == 'admin' && $username == 'admin'){
+
+            //用户储存到session
+            session(['username'=> $username]);
+
+            return view('listPage',[
+            ]);
+        }else{
+            return view('log',[
+                'faild'=>"用户名密码错误！",
+            ]);
+        }
+
+    }
+
+
+    public function logOut()
+    {
+        session()->forget('username');
+        return view('log',[
+            'faild'=>"",
         ]);
     }
 }

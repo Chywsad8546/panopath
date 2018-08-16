@@ -37,13 +37,18 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //開始
 Route::get('/', function () {
-    return view('log');
+    return view('log', [ 'faild' => "" ]);
 });
+
+
 
 
 
 //登陸
 Route::post('/logC', 'LogController@verify');
+
+//注销
+Route::get('/logOut', 'LogController@logOut');
 
 
 //訂單

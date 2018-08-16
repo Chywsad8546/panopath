@@ -12,6 +12,7 @@ namespace App\Http\Controllers;
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 
+
 //獲取參數
 use App\Http\Requests;
 use Request;

@@ -51,6 +51,10 @@ Route::post('/logC', 'LogController@verify');
 Route::get('/logOut', 'LogController@logOut');
 
 
+//服务类型
+Route::get('/listOfServiceType', 'TypeOfServiceController@list');
+
+
 //訂單
 
 Route::get('/detail', 'IndentController@detail');

@@ -157,54 +157,9 @@
                         <ul class="dropdown-menu mega-dropdown-menu animated bounceInDown">
                             <li class="col-sm-3">
                                 <ul>
-                                    <li class="dropdown-header">Forms Elements</li>
-                                    <li><a href="form-basic.html">Basic Forms</a></li>
-                                    <li><a href="form-layout.html">Form Layout</a></li>
-                                    <li><a href="form-advanced.html">Form Addons</a></li>
-                                    <li><a href="form-material-elements.html">Form Material</a></li>
-                                    <li><a href="form-float-input.html">Form Float Input</a></li>
-                                    <li><a href="form-upload.html">File Upload</a></li>
-                                    <li><a href="form-mask.html">Form Mask</a></li>
-                                    <li><a href="form-img-cropper.html">Image Cropping</a></li>
-                                    <li><a href="form-validation.html">Form Validation</a></li>
-                                </ul>
-                            </li>
-                            <li class="col-sm-3">
-                                <ul>
-                                    <li class="dropdown-header">Advance Forms</li>
-                                    <li><a href="form-dropzone.html">File Dropzone</a></li>
-                                    <li><a href="form-pickers.html">Form-pickers</a></li>
-                                    <li><a href="form-wizard.html">Form-wizards</a></li>
-                                    <li><a href="form-typehead.html">Typehead</a></li>
-                                    <li><a href="form-xeditable.html">X-editable</a></li>
-                                    <li><a href="form-summernote.html">Summernote</a></li>
-                                    <li><a href="form-bootstrap-wysihtml5.html">Bootstrap wysihtml5</a></li>
-                                    <li><a href="form-tinymce-wysihtml5.html">Tinymce wysihtml5</a></li>
-                                </ul>
-                            </li>
-                            <li class="col-sm-3">
-                                <ul>
-                                    <li class="dropdown-header">Table Example</li>
-                                    <li><a href="basic-table.html">Basic Tables</a></li>
-                                    <li><a href="table-layouts.html">Table Layouts</a></li>
-                                    <li><a href="data-table.html">Data Table</a></li>
-                                    <li><a href="bootstrap-tables.html">Bootstrap Tables</a></li>
-                                    <li><a href="responsive-tables.html">Responsive Tables</a></li>
-                                    <li><a href="editable-tables.html">Editable Tables</a></li>
-                                    <li><a href="foo-tables.html">FooTables</a></li>
-                                    <li><a href="jsgrid.html">JsGrid Tables</a></li>
-                                </ul>
-                            </li>
-                            <li class="col-sm-3">
-                                <ul>
-                                    <li class="dropdown-header">Charts</li>
-                                    <li> <a href="flot.html">Flot Charts</a> </li>
-                                    <li><a href="morris-chart.html">Morris Chart</a></li>
-                                    <li><a href="chart-js.html">Chart-js</a></li>
-                                    <li><a href="peity-chart.html">Peity Charts</a></li>
-                                    <li><a href="knob-chart.html">Knob Charts</a></li>
-                                    <li><a href="sparkline-chart.html">Sparkline charts</a></li>
-                                    <li><a href="extra-charts.html">Extra Charts</a></li>
+                                    <li class="dropdown-header">Management</li>
+                                    <li><a href="/listOfServiceType">Type Of Service</a></li>
+                                    <li><a href="/list">IndentList</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -267,9 +222,10 @@
                         </ul>
                     </li>
                     <li class="devider"></li>
-                    <li> <a href="forms.html" class="waves-effect"><i class="mdi mdi-clipboard-text fa-fw"></i> <span class="hide-menu">Forms<span class="fa arrow"></span></span></a>
+                    <li> <a href="forms.html" class="waves-effect"><i class="mdi mdi-clipboard-text fa-fw"></i> <span class="hide-menu">Management<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a href="list"><i class="fa-fw">B</i><span class="hide-menu">IndentList</span></a></li>
+                            <li><a  href="/listOfServiceType"><i class="fa-fw">B</i><span class="hide-menu">Type Of Service</span></a></li>
+                            <li><a  href="/list"><i class="fa-fw">B</i><span class="hide-menu">IndentList</span></a></li>
                             <!--<li><a href="form-layout.html"><i class="fa-fw">L</i><span class="hide-menu">Form Layout</span></a></li>
                             <li><a href="form-advanced.html"><i class="fa-fw">A</i><span class="hide-menu">Form Addons</span></a></li>
                             <li><a href="form-material-elements.html"><i class="fa-fw">M</i><span class="hide-menu">Form Material</span></a></li>-->
@@ -471,7 +427,7 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- Menu Plugin JavaScript -->
-    <script src="sidebar-nav/dist/sidebar-nav.min.js"></script>
+<!--    <script src="sidebar-nav/dist/sidebar-nav.min.js"></script>-->
     <!--slimscroll JavaScript -->
     <script src="js/jquery.slimscroll.js"></script>
     <!--Wave Effects -->

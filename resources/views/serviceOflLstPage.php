@@ -227,8 +227,8 @@
                     <li class="devider"></li>
                     <li> <a href="forms.html" class="waves-effect active"><i class="mdi mdi-clipboard-text fa-fw"></i> <span class="hide-menu">Management<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a  href="/listOfServiceType"><i class="fa-fw">B</i><span class="hide-menu">Type Of Service</span></a></li>
-                            <li><a class="active" href="/list"><i class="fa-fw">B</i><span class="hide-menu">IndentList</span></a></li>
+                            <li><a class="active" href="/listOfServiceType"><i class="fa-fw">B</i><span class="hide-menu">Type Of Service</span></a></li>
+                            <li ><a  href="/list"><i class="fa-fw">B</i><span class="hide-menu">IndentList</span></a></li>
                         </ul>
                     </li>
                 </ul>
@@ -279,84 +279,9 @@
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td>1</td>
-                                                <td>
-                                                    <a href="/detail"><img src="img/users/genu.jpg" alt="user" class="img-circle" /> Genelia Deshmukh</a>
-                                                </td>
-                                                <td>genelia@gmail.com</td>
-                                                <td>+123 456 789</td>
-                                                <td><span class="label label-danger">Designer</span> </td>
-                                                <td>23</td>
-                                                <td>12-10-2014</td>
-                                                <td>$1200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>
-                                                    <a href="/detail"><img src="img/users/arijit.jpg" alt="user" class="img-circle" /> Arijit Singh</a>
-                                                </td>
-                                                <td>arijit@gmail.com</td>
-                                                <td>+234 456 789</td>
-                                                <td><span class="label label-info">Developer</span> </td>
-                                                <td>26</td>
-                                                <td>10-09-2014</td>
-                                                <td>$1800</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>
-                                                    <a href="/detail"><img src="img/users/govinda.jpg" alt="user" class="img-circle" /> Govinda jalan</a>
-                                                </td>
-                                                <td>govinda@gmail.com</td>
-                                                <td>+345 456 789</td>
-                                                <td><span class="label label-success">Accountant</span></td>
-                                                <td>28</td>
-                                                <td>1-10-2013</td>
-                                                <td>$2200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>
-                                                    <a href="/detail"><img src="img/users/hritik.jpg" alt="user" class="img-circle" /> Hritik Roshan</a>
-                                                </td>
-                                                <td>hritik@gmail.com</td>
-                                                <td>+456 456 789</td>
-                                                <td><span class="label label-inverse">HR</span></td>
-                                                <td>25</td>
-                                                <td>2-10-2016</td>
-                                                <td>$200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>
-                                                    <a href="/detail"><img src="img/users/john.jpg" alt="user" class="img-circle" /> John Abraham</a>
-                                                </td>
-                                                <td>john@gmail.com</td>
-                                                <td>+567 456 789</td>
-                                                <td><span class="label label-danger">Manager</span></td>
-                                                <td>23</td>
-                                                <td>10-9-2015</td>
-                                                <td>$1200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
                                                 <td>6</td>
                                                 <td>
-                                                    <a href="/detail"><img src="img/users/pawandeep.jpg" alt="user" class="img-circle" /> Pawandeep kumar</a>
+                                                    <a href="/indent/detail"><img src="img/users/pawandeep.jpg" alt="user" class="img-circle" /> Pawandeep kumar</a>
                                                 </td>
                                                 <td>pawandeep@gmail.com</td>
                                                 <td>+678 456 789</td>
@@ -371,7 +296,7 @@
                                             <tr>
                                                 <td>7</td>
                                                 <td>
-                                                    <a href="/detail"><img src="img/users/ritesh.jpg" alt="user" class="img-circle" /> Ritesh Deshmukh</a>
+                                                    <a href="/indent/detail"><img src="img/users/ritesh.jpg" alt="user" class="img-circle" /> Ritesh Deshmukh</a>
                                                 </td>
                                                 <td>ritesh@gmail.com</td>
                                                 <td>+123 456 789</td>
@@ -386,7 +311,7 @@
                                             <tr>
                                                 <td>8</td>
                                                 <td>
-                                                    <a href="/detail"><img src="img/users/salman.jpg" alt="user" class="img-circle" /> Salman Khan</a>
+                                                    <a href="/indent/detail"><img src="img/users/salman.jpg" alt="user" class="img-circle" /> Salman Khan</a>
                                                 </td>
                                                 <td>salman@gmail.com</td>
                                                 <td>+234 456 789</td>
@@ -401,7 +326,7 @@
                                             <tr>
                                                 <td>9</td>
                                                 <td>
-                                                    <a href="/detail"><img src="img/users/govinda.jpg" alt="user" class="img-circle" /> Govinda jalan</a>
+                                                    <a href="/indent/detail"><img src="img/users/govinda.jpg" alt="user" class="img-circle" /> Govinda jalan</a>
                                                 </td>
                                                 <td>govinda@gmail.com</td>
                                                 <td>+345 456 789</td>
@@ -463,12 +388,6 @@
                                                      <!--   <ul class="pagination">
                                                         </ul>-->
                                                         <ul class="pagination">
-                                                            <li class="footable-page-arrow disabled"><a data-page="first" href="#first">«</a></li>
-                                                            <li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a></li>
-                                                            <li class="footable-page active"><a data-page="0" href="#">1</a></li>
-                                                            <li class="footable-page"><a data-page="1" href="#">2</a></li>
-                                                            <li class="footable-page-arrow"><a data-page="next" href="#next">›</a></li>
-                                                            <li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li>
                                                         </ul>
                                                     </div>
                                                 </td>
@@ -551,11 +470,10 @@
     <script src="bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Menu Plugin JavaScript -->
-   <!-- <script src="sidebar-nav/dist/sidebar-nav.min.js"></script>-->
+ <!--   <script src="sidebar-nav/dist/sidebar-nav.min.js"></script>-->
 
     <!--slimscroll JavaScript -->
     <script src="js/jquery.slimscroll.js"></script>
-
     <!--Wave Effects -->
     <script src="js/waves.js"></script>
     <!-- Custom Theme JavaScript -->
@@ -564,13 +482,13 @@
 
 
     <!-- Footable -->
-    <!--   <script src="footable/js/footable.all.min.js"></script>-->
-    <!--<script src="bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>-->
+       <script src="footable/js/footable.all.min.js"></script>
+    <script src="bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
 
     <!--FooTable init-->
 
     <!--//分页-->
-   <!-- <script src="js/footable-init.js"></script>-->
+    <script src="js/footable-init.js"></script>
 
 
 

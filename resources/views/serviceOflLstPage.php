@@ -244,14 +244,13 @@
             <div class="container-fluid">
                 <div class="row bg-title">
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">Foo Tables</h4> </div>
+                        <h4 class="page-title">服务类型列表</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
                         <a href="javascript: void(0);" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Buy Admin Now</a>
                         <ol class="breadcrumb">
-                            <li><a href="#">Dashboard</a></li>
-                            <li><a href="#">Tables</a></li>
-                            <li class="active">Foo Tables</li>
+                            <li><a href="#">服务类型管理</a></li>
+                            <li class="active">服务类型列表</li>
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -260,7 +259,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="white-box">
-                            <h3 class="box-title">Contact listing</h3>
+                            <h3 class="box-title">服务类型列表</h3>
                             <div class="scrollable">
                                 <div class="table-responsive">
                                     <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
@@ -281,7 +280,7 @@
                                             <tr>
                                                 <td>6</td>
                                                 <td>
-                                                    <a href="/indent/detail"><img src="img/users/pawandeep.jpg" alt="user" class="img-circle" /> Pawandeep kumar</a>
+                                                    <a href="/detail"><img src="img/users/pawandeep.jpg" alt="user" class="img-circle" /> Pawandeep kumar</a>
                                                 </td>
                                                 <td>pawandeep@gmail.com</td>
                                                 <td>+678 456 789</td>
@@ -296,7 +295,7 @@
                                             <tr>
                                                 <td>7</td>
                                                 <td>
-                                                    <a href="/indent/detail"><img src="img/users/ritesh.jpg" alt="user" class="img-circle" /> Ritesh Deshmukh</a>
+                                                    <a href="/detail"><img src="img/users/ritesh.jpg" alt="user" class="img-circle" /> Ritesh Deshmukh</a>
                                                 </td>
                                                 <td>ritesh@gmail.com</td>
                                                 <td>+123 456 789</td>
@@ -311,7 +310,7 @@
                                             <tr>
                                                 <td>8</td>
                                                 <td>
-                                                    <a href="/indent/detail"><img src="img/users/salman.jpg" alt="user" class="img-circle" /> Salman Khan</a>
+                                                    <a href="/detail"><img src="img/users/salman.jpg" alt="user" class="img-circle" /> Salman Khan</a>
                                                 </td>
                                                 <td>salman@gmail.com</td>
                                                 <td>+234 456 789</td>
@@ -326,7 +325,7 @@
                                             <tr>
                                                 <td>9</td>
                                                 <td>
-                                                    <a href="/indent/detail"><img src="img/users/govinda.jpg" alt="user" class="img-circle" /> Govinda jalan</a>
+                                                    <a href="/detail"><img src="img/users/govinda.jpg" alt="user" class="img-circle" /> Govinda jalan</a>
                                                 </td>
                                                 <td>govinda@gmail.com</td>
                                                 <td>+345 456 789</td>
@@ -470,7 +469,7 @@
     <script src="bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Menu Plugin JavaScript -->
- <!--   <script src="sidebar-nav/dist/sidebar-nav.min.js"></script>-->
+    <script src="sidebar-nav/dist/sidebar-nav.min.js"></script>
 
     <!--slimscroll JavaScript -->
     <script src="js/jquery.slimscroll.js"></script>

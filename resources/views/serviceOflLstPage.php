@@ -304,6 +304,7 @@
                                                 <td>05-10-2012</td>
                                                 <td>$3200</td>
                                                 <td>
+                                                    <button type="button" class="btn btn-info update" data-id="1" data-target="#add-contact">更改</button>
                                                     <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
                                                 </td>
                                             </tr>
@@ -319,6 +320,7 @@
                                                 <td>11-10-2014</td>
                                                 <td>$1800</td>
                                                 <td>
+                                                    <button type="button" class="btn btn-info update" data-id="2" data-target="#add-contact">更改</button>
                                                     <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
                                                 </td>
                                             </tr>
@@ -334,15 +336,16 @@
                                                 <td>12-5-2016</td>
                                                 <td>$100</td>
                                                 <td>
+                                                    <button type="button" class="btn btn-info update" data-id="3" data-target="#add-contact">更改</button>
                                                     <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
                                                 </td>
                                             </tr>
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <td colspan="2">
+                                               <!-- <td colspan="2">
                                                     <button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Add New Contact</button>
-                                                </td>
+                                                </td>-->
                                                 <div id="add-contact" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
@@ -352,6 +355,7 @@
                                                             <div class="modal-body">
                                                                 <from class="form-horizontal form-material">
                                                                     <div class="form-group">
+                                                                        <input type="hidden" class="form-control" value="" placeholder="Type name"> </div>
                                                                         <div class="col-md-12 m-b-20">
                                                                             <input type="text" class="form-control" placeholder="Type name"> </div>
                                                                         <div class="col-md-12 m-b-20">
@@ -496,3 +500,12 @@
 </body>
 
 </html>
+
+<script>
+    $('.update').each(function () {
+        $(this).click(function () {
+            var _id = $(this).data('id');
+             console.log(_id);
+        })
+    });
+</script>

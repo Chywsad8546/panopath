@@ -3,15 +3,10 @@
 session_start();
 
 
-$mysqli = mysqli_connect('127.0.0.1', 'root', '1129', 'panopath');
+/*$mysqli = mysqli_connect('127.0.0.1', 'root', '1129', 'panopath');
 
-if($mysqli){
-    echo"ok";
-}else{
-    echo"error";
-}
 
-/*if (mysqli_connect_error()) {
+if (mysqli_connect_error()) {
     die('Connect Error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
 }
 
@@ -21,7 +16,8 @@ $result = mysqli_query($mysqli, 'select * from user');
 if (mysqli_num_rows($result) > 0) {
     // 输出数据
     while($row = mysqli_fetch_assoc($result)) {
-        echo "id: " . $row["id"]. " - Name: " . $row["name"]. " " . $row["pwd"]. "<br>";
+        echo("<script>console.log('".$row["id"]."');</script>");
+        echo("<script>console.log('".$row["name"]."');</script>");
     }
 } else {
     echo "0 结果";

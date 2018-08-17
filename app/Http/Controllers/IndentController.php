@@ -31,10 +31,15 @@ class IndentController extends Controller {
 
     public function list()
     {
+        //$input=Request::all();
+
+        $pindex =Request::input('pageIndex',1);
+        $star = 8*($pindex-1);
+        $qrcode = DB::select("select * from qrcodes limit $star ,8");
 
         if (session()->has('username')) {
             return view('listPage',[
-
+                'qrcode'=>$qrcode,
             ]);
         }else{
             return view('log',[

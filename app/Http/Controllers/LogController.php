@@ -10,6 +10,8 @@ namespace App\Http\Controllers;
 
 
 namespace App\Http\Controllers;
+use http\Env\Url;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 
 
@@ -20,7 +22,7 @@ class LogController extends Controller {
 
     public function verify()
     {
-        $student = DB::select("select * from user ");
+           $qrcode = DB::select("select * from qrcodes limit 0,8");
         $input=Request::all();
        /* dd($input);*/
         $username= $input['username'];
@@ -32,7 +34,11 @@ class LogController extends Controller {
             //用户储存到session
             session(['username'=> $username]);
 
+           /* return url('/list',[
+                'pageIndex'=>1,
+            ]);*/
             return view('listPage',[
+                'qrcode'=>$qrcode,
             ]);
         }else{
             return view('log',[

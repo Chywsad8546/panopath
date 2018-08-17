@@ -278,6 +278,32 @@
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
+                                        <form id="pro_list_form" class="form-inline form-search" pageSize="15">
+                                            <div class="form-group col-sm-2">
+                                                <label class="control-label">用户名</label>
+                                                <input id="demo-input-search2" type="text" placeholder="Search" class="form-control" autocomplete="off">
+                                            </div>
+                                            <div class="form-group  col-sm-2">
+                                                <label class="control-label">类型</label>
+                                                <select class="selectpicker m-b-20 m-r-10" data-style="btn-success btn-outline">
+                                                    <option data-tokens="ketchup mustard">全部</option>
+                                                    <option data-tokens="mustard">Burger, Shake and a Smile</option>
+                                                    <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-actions pull-right">
+                                                <button class="fcbtn btn btn-success btn-outline btn-1b">查询</button>
+                                            </div>
+                                        </form>
+                                      <!--  <div class="col-lg-6 col-sm-12">
+                                            <div class="row">
+                                                <form>
+                                                <div class="col-sm-4 text-right m-b-20">
+
+                                                </div>
+                                                </form>
+                                            </div>
+                                        </div>-->
                                         <tbody>
                                         <?php
                                         //for ($i=0; $i<sizeof($qrcode); $i++) {
@@ -298,6 +324,7 @@
                                                 <td>12-10-2014</td>
                                                 <td>$1200</td>-->
                                                 <td>
+                                                    <button type=\"button\" class=\"btn btn-info update\" data-toggle=\"modal\" data-id=\"1\" data-target=\"#add-contact\">更改</button>
                                                     <button type=\"button\" class=\"btn btn-sm btn-icon btn-pure btn-outline delete-row-btn\" data-toggle=\"tooltip\" data-original-title=\"Delete\"><i class=\"ti-close\" aria-hidden=\"true\"></i></button>
                                                 </td>
                                             </tr>";
@@ -318,24 +345,34 @@
                                                             <div class="modal-body">
                                                                 <from class="form-horizontal form-material">
                                                                     <div class="form-group">
+                                                                        <input type="hidden" class="form-control" value="" >
                                                                         <div class="col-md-12 m-b-20">
                                                                             <input type="text" class="form-control" placeholder="Type name"> </div>
                                                                         <div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" placeholder="Email"> </div>
+                                                                            <input id="uid" type="text" class="form-control" placeholder="Email"> </div>
                                                                         <div class="col-md-12 m-b-20">
                                                                             <input type="text" class="form-control" placeholder="Phone"> </div>
                                                                         <div class="col-md-12 m-b-20">
                                                                             <input type="text" class="form-control" placeholder="Designation"> </div>
                                                                         <div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" placeholder="Age"> </div>
-                                                                        <div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" placeholder="Date of joining"> </div>
-                                                                        <div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" placeholder="Salary"> </div>
-                                                                        <div class="col-md-12 m-b-20">
+                                                                            <h5 class="m-t-30 m-b-10">Select boxes with optgroups</h5>
+                                                                            <select class="selectpicker" data-style="form-control">
+                                                                                <optgroup label="Picnic">
+                                                                                    <option>Mustard</option>
+                                                                                    <option>Ketchup</option>
+                                                                                    <option>Relish</option>
+                                                                                </optgroup>
+                                                                                <optgroup label="Camping">
+                                                                                    <option>Tent</option>
+                                                                                    <option>Flashlight</option>
+                                                                                    <option>Toilet Paper</option>
+                                                                                </optgroup>
+                                                                            </select>
+                                                                        </div>
+                                                                      <!--  <div class="col-md-12 m-b-20">
                                                                             <div class="fileupload btn btn-danger btn-rounded waves-effect waves-light"><span><i class="ion-upload m-r-5"></i>Upload Contact Image</span>
                                                                                 <input type="file" class="upload"> </div>
-                                                                        </div>
+                                                                        </div>-->
                                                                     </div>
                                                                 </from>
                                                             </div>
@@ -451,21 +488,113 @@
     <!-- Custom Theme JavaScript -->
     <script src="js/custom.min.js"></script>
 
+    <script src="custom-select/custom-select.min.js" type="text/javascript"></script>
 
 
     <!-- Footable -->
     <!--   <script src="footable/js/footable.all.min.js"></script>-->
-    <!--<script src="bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>-->
+    <script src="bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+
+    <script src="bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript" src="multiselect/js/jquery.multi-select.js"></script>
 
     <!--FooTable init-->
 
     <!--//分页-->
    <!-- <script src="js/footable-init.js"></script>-->
 
-
+    <script src="switchery/dist/switchery.min.js"></script>
 
     <!--Style Switcher -->
     <script src="js/jQuery.style.switcher.js"></script>
+
 </body>
 
 </html>
+
+
+<script>
+    jQuery(document).ready(function() {
+        // Switchery
+        var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+        $('.js-switch').each(function() {
+            new Switchery($(this)[0], $(this).data());
+        });
+        // For select 2
+        $(".select2").select2();
+        $('.selectpicker').selectpicker();
+        //Bootstrap-TouchSpin
+        $(".vertical-spin").TouchSpin({
+            verticalbuttons: true,
+            verticalupclass: 'ti-plus',
+            verticaldownclass: 'ti-minus'
+        });
+        var vspinTrue = $(".vertical-spin").TouchSpin({
+            verticalbuttons: true
+        });
+        if (vspinTrue) {
+            $('.vertical-spin').prev('.bootstrap-touchspin-prefix').remove();
+        }
+        $("input[name='tch1']").TouchSpin({
+            min: 0,
+            max: 100,
+            step: 0.1,
+            decimals: 2,
+            boostat: 5,
+            maxboostedstep: 10,
+            postfix: '%'
+        });
+        $("input[name='tch2']").TouchSpin({
+            min: -1000000000,
+            max: 1000000000,
+            stepinterval: 50,
+            maxboostedstep: 10000000,
+            prefix: '$'
+        });
+        $("input[name='tch3']").TouchSpin();
+        $("input[name='tch3_22']").TouchSpin({
+            initval: 40
+        });
+        $("input[name='tch5']").TouchSpin({
+            prefix: "pre",
+            postfix: "post"
+        });
+        // For multiselect
+        $('#pre-selected-options').multiSelect();
+        $('#optgroup').multiSelect({
+            selectableOptgroup: true
+        });
+        $('#public-methods').multiSelect();
+        $('#select-all').click(function() {
+            $('#public-methods').multiSelect('select_all');
+            return false;
+        });
+        $('#deselect-all').click(function() {
+            $('#public-methods').multiSelect('deselect_all');
+            return false;
+        });
+        $('#refresh').on('click', function() {
+            $('#public-methods').multiSelect('refresh');
+            return false;
+        });
+        $('#add-option').on('click', function() {
+            $('#public-methods').multiSelect('addOption', {
+                value: 42,
+                text: 'test 42',
+                index: 0
+            });
+            return false;
+        });
+    });
+</script>
+<script>
+    $('.update').each(function () {
+        $(this).click(function () {
+            var _id = $(this).data('id');
+            console.log(_id);
+            $("#uid").val(_id)
+        })
+    });
+</script>
+

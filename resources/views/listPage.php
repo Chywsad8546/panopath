@@ -314,7 +314,7 @@
                                                         <div class="modal-content">
                                                             <div class="modal-header">
                                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                                <h4 class="modal-title" id="myModalLabel">Add New Contact</h4> </div>
+                                                                <h4 class="modal-title" id="myModa lLabel">Add New Contact</h4> </div>
                                                             <div class="modal-body">
                                                                 <from class="form-horizontal form-material">
                                                                     <div class="form-group">

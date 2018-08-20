@@ -21,5 +21,5 @@ class UserController extends Controller {
             'item'=>$student,
         ]);*/
     }
-    }
+}
 

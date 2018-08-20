@@ -26,8 +26,6 @@ Route::get('/index', function () {
 });
 
 
-
-
 Route::get('/user',['uses'=>'UserController@test1']);
 
 Auth::routes();
@@ -39,9 +37,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/', function () {
     return view('log', [ 'faild' => "" ]);
 });
-
-
-
 
 
 //登陸

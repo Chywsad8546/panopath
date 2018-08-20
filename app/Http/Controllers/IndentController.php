@@ -7,9 +7,6 @@
  */
 
 namespace App\Http\Controllers;
-
-
-namespace App\Http\Controllers;
 use App\Http\Requests;
 use Request;
 use Illuminate\Support\Facades\DB;
@@ -46,8 +43,6 @@ class IndentController extends Controller {
                 'faild'=>"请登录！",
             ]);
         }
-            //
-
 
     }
 }

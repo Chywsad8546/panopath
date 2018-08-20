@@ -37,7 +37,7 @@
     <!-- ============================================================== -->
     <!-- Preloader -->
     <!-- ============================================================== -->
-    <div class="preloader">
+        <div class="preloader">
         <svg class="circular" viewBox="25 25 50 50">
             <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
         </svg>
@@ -64,142 +64,8 @@
                 <!-- /Logo -->
                 <!-- Search input and Toggle icon -->
                 <ul class="nav navbar-top-links navbar-left">
-                    <li><a href="javascript:void(0)" class="open-close waves-effect waves-light visible-xs"><i class="ti-close ti-menu"></i></a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"> <i class="mdi mdi-gmail"></i>
-                            <div class="notify"> <span class="heartbit"></span> <span class="point"></span> </div>
-                        </a>
-                        <ul class="dropdown-menu mailbox animated bounceInDown">
-                            <li>
-                                <div class="drop-title">You have 4 new messages</div>
-                            </li>
-                            <li>
-                                <div class="message-center">
-                                    <a href="#">
-                                        <div class="user-img"> <img src="img/users/pawandeep.jpg" alt="user" class="img-circle"> <span class="profile-status online pull-right"></span> </div>
-                                        <div class="mail-contnet">
-                                            <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:30 AM</span> </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="user-img"> <img src="img/users/sonu.jpg" alt="user" class="img-circle"> <span class="profile-status busy pull-right"></span> </div>
-                                        <div class="mail-contnet">
-                                            <h5>Sonu Nigam</h5> <span class="mail-desc">I've sung a song! See you at</span> <span class="time">9:10 AM</span> </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="user-img"> <img src="img/users/arijit.jpg" alt="user" class="img-circle"> <span class="profile-status away pull-right"></span> </div>
-                                        <div class="mail-contnet">
-                                            <h5>Arijit Sinh</h5> <span class="mail-desc">I am a singer!</span> <span class="time">9:08 AM</span> </div>
-                                    </a>
-                                    <a href="#">
-                                        <div class="user-img"> <img src="img/users/pawandeep.jpg" alt="user" class="img-circle"> <span class="profile-status offline pull-right"></span> </div>
-                                        <div class="mail-contnet">
-                                            <h5>Pavan kumar</h5> <span class="mail-desc">Just see the my admin!</span> <span class="time">9:02 AM</span> </div>
-                                    </a>
-                                </div>
-                            </li>
-                            <li>
-                                <a class="text-center" href="javascript:void(0);"> <strong>See all notifications</strong> <i class="fa fa-angle-right"></i> </a>
-                            </li>
-                        </ul>
-                        <!-- /.dropdown-messages -->
-                    </li>
-                    <!-- .Task dropdown -->
-                    <li class="dropdown">
-                        <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"> <i class="mdi mdi-check-circle"></i>
-                            <div class="notify"><span class="heartbit"></span><span class="point"></span></div>
-                        </a>
-                        <ul class="dropdown-menu dropdown-tasks animated slideInUp">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p> <strong>Task 1</strong> <span class="pull-right text-muted">40% Complete</span> </p>
-                                        <div class="progress progress-striped active">
-                                            <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%"> <span class="sr-only">40% Complete (success)</span> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p> <strong>Task 2</strong> <span class="pull-right text-muted">20% Complete</span> </p>
-                                        <div class="progress progress-striped active">
-                                            <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%"> <span class="sr-only">20% Complete</span> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p> <strong>Task 3</strong> <span class="pull-right text-muted">60% Complete</span> </p>
-                                        <div class="progress progress-striped active">
-                                            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"> <span class="sr-only">60% Complete (warning)</span> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p> <strong>Task 4</strong> <span class="pull-right text-muted">80% Complete</span> </p>
-                                        <div class="progress progress-striped active">
-                                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%"> <span class="sr-only">80% Complete (danger)</span> </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li class="divider"></li>
-                            <li>
-                                <a class="text-center" href="#"> <strong>See All Tasks</strong> <i class="fa fa-angle-right"></i> </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- .Megamenu -->
-                    <li class="mega-dropdown"> <a class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#"><span class="hidden-xs">Mega</span> <i class="icon-options-vertical"></i></a>
-                        <ul class="dropdown-menu mega-dropdown-menu animated bounceInDown">
-                            <li class="col-sm-3">
-                                <ul>
-                                    <li class="dropdown-header">Management</li>
-                                    <li><a href="/listOfServiceType">Type Of Service</a></li>
-                                    <li><a href="/list">IndentList</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- /.Megamenu -->
-                </ul>
-                <ul class="nav navbar-top-links navbar-right pull-right">
-                    <li>
-                        <form role="search" class="app-search hidden-sm hidden-xs m-r-10">
-                            <input type="text" placeholder="Search..." class="form-control"> <a href=""><i class="fa fa-search"></i></a> </form>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"> <img src="img/users/varun.jpg" alt="user-img" width="36" class="img-circle"><b class="hidden-xs"><?php  echo Session::get('username') ?></b><span class="caret"></span> </a>
-                        <ul class="dropdown-menu dropdown-user animated flipInY">
-                            <li>
-                                <div class="dw-user-box">
-                                    <div class="u-img"><img src="img/users/varun.jpg" alt="user" /></div>
-                                    <div class="u-text">
-                                        <h4>Steave Jobs</h4>
-                                        <p class="text-muted">varun@gmail.com</p><a href="profile.html" class="btn btn-rounded btn-danger btn-sm">View Profile</a></div>
-                                </div>
-                            </li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#"><i class="ti-user"></i> My Profile</a></li>
-                            <li><a href="#"><i class="ti-wallet"></i> My Balance</a></li>
-                            <li><a href="#"><i class="ti-email"></i> Inbox</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#"><i class="ti-settings"></i> Account Setting</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="/logOut"><i class="fa fa-power-off"></i> Logout</a></li>
-                        </ul>
-                        <!-- /.dropdown-user -->
-                    </li>
-                    <!-- /.dropdown -->
+                    <li><a href="/listOfServiceType">Type Of Service</a></li>
+                    <li><a href="/list">IndentList</a></li>
                 </ul>
             </div>
             <!-- /.navbar-header -->
@@ -215,22 +81,10 @@
                 <div class="sidebar-head">
                     <h3><span class="fa-fw open-close"><i class="ti-menu hidden-xs"></i><i class="ti-close visible-xs"></i></span> <span class="hide-menu">Navigation</span></h3> </div>
                 <ul class="nav" id="side-menu">
-                    <li class="user-pro">
-                        <a href="#" class="waves-effect"><img src="img/users/varun.jpg" alt="user-img" class="img-circle"> <span class="hide-menu"> Steve Gection<span class="fa arrow"></span></span>
-                        </a>
-                        <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
-                            <li><a href="javascript:void(0)"><i class="ti-user"></i> <span class="hide-menu">My Profile</span></a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-wallet"></i> <span class="hide-menu">My Balance</span></a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-email"></i> <span class="hide-menu">Inbox</span></a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-settings"></i> <span class="hide-menu">Account Setting</span></a></li>
-                            <li><a href="/logOut"><i class="fa fa-power-off"></i> <span class="hide-menu">Logout</span></a></li>
-                        </ul>
-                    </li>
                     <li class="devider"></li>
-                    <li> <a href="forms.html" class="waves-effect active"><i class="mdi mdi-clipboard-text fa-fw"></i> <span class="hide-menu">Management<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a  href="/listOfServiceType"><i class="fa-fw">B</i><span class="hide-menu">Type Of Service</span></a></li>
-                            <li><a class="active" href="/list"><i class="fa-fw">B</i><span class="hide-menu">IndentList</span></a></li>
+                            <li><a class="active" href="/listOfServiceType"><span class="hide-menu">Type Of Service</span></a></li>
+                            <li ><a  href="/list"><span class="hide-menu">IndentList</span></a></li>
                         </ul>
                     </li>
                 </ul>
@@ -243,20 +97,6 @@
         <!-- Page Content -->
         <!-- ============================================================== -->
         <div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row bg-title">
-                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">订单列表页</h4> </div>
-                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                        <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
-                        <a href="javascript: void(0);" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Buy Admin Now</a>
-                        <ol class="breadcrumb">
-                            <li><a href="#">订单管理</a></li>
-                            <li class="active">订单列表页</li>
-                        </ol>
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div>
                 <!-- row -->
                 <div class="row">
                     <div class="col-md-12">
@@ -272,9 +112,6 @@
                                                 <th>QRuuid</th>
                                                 <th>qrURL</th>
                                                 <th>createdAt</th>
-                                        <!--        <th>Age</th>
-                                                <th>Joining date</th>
-                                                <th>Salery</th>-->
                                                 <th>Action</th>
                                             </tr>
                                         </thead>

@@ -16,8 +16,10 @@ class TypeOfServiceController extends Controller
     public function list()
     {
         if (session()->has('username')) {
-            return view('serviceOflLstPage',[
 
+            $typeList = DB::select("select * from type_of_service");
+            return view('serviceOflLstPage',[
+                'typeList'=>$typeList,
             ]);
         }else{
             return view('log',[

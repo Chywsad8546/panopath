@@ -114,80 +114,30 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>Role</th>
-                                                <th>Age</th>
-                                                <th>Joining date</th>
-                                                <th>Salery</th>
-                                                <th>Action</th>
+                                                <th>serviceName</th>
+                                                <th>bonusRate</th>
+                                                <th>price</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>6</td>
-                                                <td>
-                                                    <a href="/detail"><img src="img/users/pawandeep.jpg" alt="user" class="img-circle" /> Pawandeep kumar</a>
-                                                </td>
-                                                <td>pawandeep@gmail.com</td>
-                                                <td>+678 456 789</td>
-                                                <td><span class="label label-warning">Chairman</span></td>
-                                                <td>29</td>
-                                                <td>10-5-2013</td>
-                                                <td>$1500</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>7</td>
-                                                <td>
-                                                    <a href="/detail"><img src="img/users/ritesh.jpg" alt="user" class="img-circle" /> Ritesh Deshmukh</a>
-                                                </td>
-                                                <td>ritesh@gmail.com</td>
-                                                <td>+123 456 789</td>
-                                                <td><span class="label label-danger">Designer</span></td>
-                                                <td>35</td>
-                                                <td>05-10-2012</td>
-                                                <td>$3200</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-info update" data-toggle="modal" data-id="1" data-target="#add-contact">更改</button>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>8</td>
-                                                <td>
-                                                    <a href="/detail"><img src="img/users/salman.jpg" alt="user" class="img-circle" /> Salman Khan</a>
-                                                </td>
-                                                <td>salman@gmail.com</td>
-                                                <td>+234 456 789</td>
-                                                <td><span class="label label-info">Developer</span></td>
-                                                <td>27</td>
-                                                <td>11-10-2014</td>
-                                                <td>$1800</td>
-                                                <td>
-                                                    <button type="button" class="btn btn-info update" data-toggle="modal" data-id="2" data-target="#add-contact">更改</button>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
-                                                </td>
-                                            </tr>
-                                            <tr>
+                                            <?php
+                                                //for ($i=0; $i<sizeof($qrcode); $i++) {
+                                                foreach($typeList as $item) {
+                                                echo "
+                                             <tr>
                                                 <td>9</td>
                                                 <td>
-                                                    <a href="/detail"><img src="img/users/govinda.jpg"  alt="user" class="img-circle" /> Govinda jalan</a>
+                                                    <a href='/detail'><img src='img/users/govinda.jpg'  alt='user' class='img-circle' />$item->name</a>
                                                 </td>
-                                                <td>govinda@gmail.com</td>
-                                                <td>+345 456 789</td>
-                                                <td><span class="label label-success">Accountant</span></td>
-                                                <td>18</td>
-                                                <td>12-5-2016</td>
-                                                <td>$100</td>
+                                                <td>$item->bonus_rate</td>
+                                                <td>$item->money</td>
                                                 <td>
-                                                    <button type="button" class="btn btn-info update" data-toggle="modal" data-id="3" data-target="#add-contact">更改</button>
-                                                    <button type="button" class="btn btn-sm btn-icon btn-pure btn-outline delete-row-btn" data-toggle="tooltip" data-original-title="Delete"><i class="ti-close" aria-hidden="true"></i></button>
+                                                    <button type='button' class='btn btn-info update' data-toggle='modal' data-id='3' data-target='#add-contact'>更改</button>
+                                                    <button type='button' class='btn btn-sm btn-icon btn-pure btn-outline delete-row-btn' data-toggle='tooltip' data-original-title='Delete'><i class='ti-close' aria-hidden='true'></i></button>
                                                 </td>
-                                            </tr>
+                                            </tr>  ";
+                                        }
+                                          ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>

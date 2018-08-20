@@ -23,10 +23,10 @@ class LogController extends Controller {
     public function verify()
     {
            $qrcode = DB::select("select * from qrcodes limit 0,8");
-        $input=Request::all();
-       /* dd($input);*/
-        $username= $input['username'];
-        $pwd = $input['pwd'];
+           $input=Request::all();
+        /* dd($input);*/
+           $username= $input['username'];
+           $pwd = $input['pwd'];
 
 
         if ($pwd == 'admin' && $username == 'admin'){

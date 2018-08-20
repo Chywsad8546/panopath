@@ -35,6 +35,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 
+
 //開始
 Route::get('/', function () {
     return view('log', [ 'faild' => "" ]);

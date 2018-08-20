@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php session_start();
-      echo("<script>console.log(".json_encode($qrcode).");</script>");
+/*      echo("<script>console.log(".json_encode($pageend).");</script>");*/
 ?>
 <html lang="en">
 
@@ -126,17 +126,18 @@
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
-                                        <form id="pro_list_form" class="form-inline form-search" pageSize="15">
+                                        <form id="pro_list_form" class="form-inline form-search" action="/list" pageSize="15">
                                             <div class="form-group col-sm-2">
                                                 <label class="control-label">用户名</label>
-                                                <input id="demo-input-search2" type="text" placeholder="Search" class="form-control" autocomplete="off">
+                                                <input id="demo-input-search2" name="userName" <?php if (isset($requestAll['userName'])){echo "value='".$requestAll['userName']."'";} ?>  type="text" placeholder="Search" class="form-control" autocomplete="off">
                                             </div>
                                             <div class="form-group  col-sm-2">
                                                 <label class="control-label">类型</label>
-                                                <select class="selectpicker m-b-20 m-r-10" data-style="btn-success btn-outline">
-                                                    <option data-tokens="ketchup mustard">全部</option>
-                                                    <option data-tokens="mustard">Burger, Shake and a Smile</option>
-                                                    <option data-tokens="frosting">Sugar, Spice and all things nice</option>
+                                                <select class="selectpicker m-b-20 m-r-10" name="service_type" data-style="btn-success btn-outline">
+                                                    <option data-tokens="ketchup mustard" value="0">全部</option>
+                                                    <option data-tokens="mustard" value="1">已买</option>
+                                                    <option data-tokens="mustard" value="2">未买</option>
+                                                    <option data-tokens="mustard" value="3">未确认</option>
                                                 </select>
                                             </div>
                                             <div class="form-actions pull-right">
@@ -238,12 +239,33 @@
                                                      <!--   <ul class="pagination">
                                                         </ul>-->
                                                         <ul class="pagination">
-                                                            <li class="footable-page-arrow disabled"><a data-page="first" href="#first">«</a></li>
-                                                            <li class="footable-page-arrow disabled"><a data-page="prev" href="#prev">‹</a></li>
-                                                            <li class="footable-page active"><a data-page="0" href="#">1</a></li>
-                                                            <li class="footable-page"><a data-page="1" href="#">2</a></li>
-                                                            <li class="footable-page-arrow"><a data-page="next" href="#next">›</a></li>
-                                                            <li class="footable-page-arrow"><a data-page="last" href="#last">»</a></li>
+                                                            <li class="footable-page-arrow"><a data-page="first" href="/list?pageIndex=1">«</a></li>
+                                                            <?php
+                                                            if($pageindex >1){
+                                                                echo "<li class=\"footable-page-arrow\"><a data-page=\"prev\" href='/list?pageIndex=".($pageindex-1)."'>‹</a></li>";
+                                                            }
+
+                                                                for ($i=4;$i>0;$i--){
+                                                                        if (($pageindex-$i)<1){
+                                                                            continue;
+                                                                        }
+                                                                    echo "<li class=\"footable-page \"><a data-page=\"0\" href=\"/list?pageIndex=".($pageindex-$i)."\">".($pageindex-$i)."</a></li>";
+                                                                }
+
+                                                                  echo "<li class=\"footable-page active\"><a data-page=\"0\" href=\"/list?pageIndex=".($pageindex)."\">".($pageindex)."</a></li>";
+
+                                                            for ($i=1;$i<=4;$i++){
+                                                                if (($pageindex+$i)>$pageend){
+                                                                     break;
+                                                                }
+                                                                echo "<li class=\"footable-page \"><a data-page=\"0\" href=\"/list?pageIndex=".($pageindex+$i)."\">".($pageindex+$i)."</a></li>";
+                                                            }
+
+                                                               if($pageindex <$pageend){
+                                                                echo "<li class=\"footable-page-arrow\"><a data-page=\"next\" href='/list?pageIndex=".($pageindex+1)."'>›</a></li>";
+                                                               }
+                                                            ?>
+                                                            <li class="footable-page-arrow"><a data-page="last" href="/list?pageIndex=<?php echo $pageend?>">»</a></li>
                                                         </ul>
                                                     </div>
                                                 </td>

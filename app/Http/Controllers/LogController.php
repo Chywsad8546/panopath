@@ -23,6 +23,8 @@ class LogController extends Controller {
     public function verify()
     {
            $qrcode = DB::select("select * from qrcodes limit 0,8");
+           $count = DB::select("select count(*) as cou from qrcodes")[0]->cou;
+           $pageend =$count%8==0?$count/8:$count/8+1 ;
            $input=Request::all();
         /* dd($input);*/
            $username= $input['username'];
@@ -39,6 +41,9 @@ class LogController extends Controller {
             ]);*/
             return view('listPage',[
                 'qrcode'=>$qrcode,
+                'requestAll'=>$input,
+                'pageend'=>floor($pageend),
+                'pageindex'=>1
             ]);
         }else{
             return view('log',[

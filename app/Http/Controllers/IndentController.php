@@ -31,15 +31,42 @@ class IndentController extends Controller {
 
     public function list()
     {
-        //$input=Request::all();
+
+
+        $sql = "select * from qrcodes LEFT JOIN sales_amount ON qrcodes.id = sales_amount.qrCodeId WHERE 1=1";
+        $requestAll=Request::all();
 
         $pindex =Request::input('pageIndex',1);
         $star = 8*($pindex-1);
-        $qrcode = DB::select("select * from qrcodes limit $star ,8");
+
+        $username =Request::input('userName',null);
+        if ($username!=null){
+            $sql=$sql." and username like '%$username%'";
+        }
+
+        $serviceType =Request::input('service_type',"0");
+        if ($serviceType=="1"){
+            $sql=$sql." and type_id != 4 ";
+        }else if ($serviceType=="2"){
+            $sql=$sql." and type_id = 4 ";
+        }else if ($serviceType=="3"){
+            $sql=$sql." and type_id is null ";
+        }
+
+        $countsql = str_replace("*","count(*) as cou",$sql);
+        $count = DB::select($countsql)[0]->cou;
+        $pageend =$count%8==0?$count/8:$count/8+1;
+
+        $sql=$sql." limit  $star ,8";
+
+        $qrcode = DB::select($sql);
 
         if (session()->has('username')) {
             return view('listPage',[
                 'qrcode'=>$qrcode,
+                'requestAll'=>$requestAll,
+                'pageend'=>floor($pageend),
+                'pageindex'=>$pindex,
             ]);
         }else{
             return view('log',[

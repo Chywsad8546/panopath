@@ -54,15 +54,12 @@
                                     <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
-                                                <th>Name</th>
+                                                <th>订单编号</th>
+                                                <th>销售用户名</th>
                                                 <th>价格</th>
                                                 <th>购买类型</th>
-                                                <th>createdAt</th>
-                                        <!--        <th>Age</th>
-                                                <th>Joining date</th>
-                                                <th>Salery</th>-->
-                                                <th>Action</th>
+                                                <th>创建时间</th>
+                                                <th>更新订单</th>
                                             </tr>
                                         </thead>
                                         <form id="pro_list_form" class="form-inline form-search" action="/list" pageSize="15">
@@ -95,28 +92,26 @@
                                         <?php
                                         //for ($i=0; $i<sizeof($qrcode); $i++) {
                                         foreach($qrcode as $item) {
-                                            echo " <tr>
-                                                <td>$item->sourceId</td>
-                                               <td>";
-                                                  if ($item->username!="无对应销售"){
-                                                      echo "<a href='/detail?username=$item->username'>$item->username</a>";
-                                                  }else{
-                                                      echo $item->username;
-                                                  }
-                                            echo "
-                                                </td>
-                                                <td> $item->money</td>
-                                              <td>"; if (!isset($item->name)&& $item->username!="无对应销售"){echo"未确认";}else {echo $item->name;} echo"</td>
-                                         
-                                                <td> $item->createdAt</td><td>
-                                             ";
-                                             if(!isset($item->type_id) && $item->username!="无对应销售"){
+                                            echo " <tr><td>$item->sourceId</td><td>";
+                                            if ($item->username!="无对应销售"){
+                                                echo "<a href='/details/$item->username'>$item->username</a>";
+                                            }
+                                            else{
+                                                echo $item->username;
+                                            }
+                                            echo "</td><td> $item->money</td><td>"; 
+                                            if (!isset($item->name)&& $item->username!="无对应销售"){
+                                                echo"未确认";
+                                            }
+                                            else{
+                                            echo $item->name;
+                                            } 
+                                            echo"</td><td> $item->createdAt</td><td>";
+                                            if(!isset($item->type_id) && $item->username!="无对应销售"){
                                                  echo" <button type=\"button\" class=\"btn btn-info update\" data-toggle=\"modal\" data-id=\"1\" data-target=\"#add-contact\">更改</button>";
-                                                   }
-                                              echo "  <button type='button' class=\"btn btn-sm btn-icon btn-pure btn-outline delete-row-btn\" data-toggle=\"tooltip\" data-original-title=\"Delete\"><i class=\"ti-close\" aria-hidden=\"true\"></i></button>
-                                                </td>
-                                            </tr>";
-                                        }
+                                             }
+                                            echo "  <button type='button' class=\"btn btn-sm btn-icon btn-pure btn-outline delete-row-btn\" data-toggle=\"tooltip\" data-original-title=\"Delete\"><i class=\"ti-close\" aria-hidden=\"true\"></i></button></td></tr>";
+                                            }
                                         ?>
                                         </tbody>
                                         <tfoot>

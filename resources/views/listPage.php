@@ -64,7 +64,7 @@
                     <h3><span class="fa-fw open-close"><i class="ti-menu hidden-xs"></i><i class="ti-close visible-xs"></i></span> <span class="hide-menu">Navigation</span></h3> </div>
                 <ul class="nav" id="side-menu">
                     <li class="user-pro">
-                        <a href="#" class="waves-effect"><img src="img/users/varun.jpg" alt="user-img" class="img-circle"> <span class="hide-menu"> Steve Gection<span class="fa arrow"></span></span>
+                        <a href="#" class="waves-effect"><!--<img src="img/users/varun.jpg" alt="user-img" class="img-circle"> <span class="hide-menu">--> <?php  echo Session::get('username') ?><span class="fa arrow"></span></span>
                         </a>
                         <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
                             <li><a href="javascript:void(0)"><i class="ti-user"></i> <span class="hide-menu">My Profile</span></a></li>
@@ -117,8 +117,8 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>Name</th>
-                                                <th>QRuuid</th>
-                                                <th>qrURL</th>
+                                                <th>价格</th>
+                                                <th>购买类型</th>
                                                 <th>createdAt</th>
                                         <!--        <th>Age</th>
                                                 <th>Joining date</th>
@@ -134,10 +134,10 @@
                                             <div class="form-group  col-sm-2">
                                                 <label class="control-label">类型</label>
                                                 <select class="selectpicker m-b-20 m-r-10" name="service_type" data-style="btn-success btn-outline">
-                                                    <option data-tokens="ketchup mustard" value="0">全部</option>
-                                                    <option data-tokens="mustard" value="1">已买</option>
-                                                    <option data-tokens="mustard" value="2">未买</option>
-                                                    <option data-tokens="mustard" value="3">未确认</option>
+                                                    <option data-tokens="ketchup mustard" <?php if ($serviceType=="0"){echo"selected = 'selected'";} ?>value="0">全部</option>
+                                                    <option data-tokens="mustard" <?php if ($serviceType=="1"){echo"selected = 'selected'";} ?>value="1">已买</option>
+                                                    <option data-tokens="mustard" <?php if ($serviceType=="2"){echo"selected = 'selected'";} ?> value="2">未买</option>
+                                                    <option data-tokens="mustard" <?php if ($serviceType=="3"){echo"selected = 'selected'";} ?>value="3">未确认</option>
                                                 </select>
                                             </div>
                                             <div class="form-actions pull-right">
@@ -159,19 +159,16 @@
                                         foreach($qrcode as $item) {
                                             echo " <tr>
                                                 <td>$item->id</td>
-                                                <td>
-                                                    <a href=\"/detail?id=$item->id&typeId=$item->type_id\"><img src=\"img/users/genu.jpg\" alt=\"user\" class=\"img-circle\" /> $item->username</a>
+                                               <td>
+                                                    <a href=\"/detail?id=$item->id&typeId=$item->type_id\">$item->username</a>
                                                 </td>
-                                                <td>$item->QRuuid</td>
-                                                <td>$item->qrURL</td>
-                                         
-                                           <!-- logo
-                                                <span class=\"label label-danger\">Designer</span>-->
-                                                
-                                                <td>$item->createdAt</td>
-                                        <!--        <td>23</td>
-                                                <td>12-10-2014</td>
-                                                <td>$1200</td>-->
+                                                <td> $item->money</td>
+                                              <td> $item->name</td>
+                                           <!--logo
+                                                <span class=\"label-danger\">Designer</span>-->
+
+                                                <td> $item->createdAt</td>
+                                     
                                                 <td>
                                                     <button type=\"button\" class=\"btn btn-info update\" data-toggle=\"modal\" data-id=\"1\" data-target=\"#add-contact\">更改</button>
                                                     <button type=\"button\" class=\"btn btn-sm btn-icon btn-pure btn-outline delete-row-btn\" data-toggle=\"tooltip\" data-original-title=\"Delete\"><i class=\"ti-close\" aria-hidden=\"true\"></i></button>

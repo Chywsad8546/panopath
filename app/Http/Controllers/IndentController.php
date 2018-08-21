@@ -35,10 +35,8 @@ class IndentController extends Controller {
     public function index()
     {
         $requestAll=Request::all();
-
+        if (session()->has('username')) {
         $sql = "select *,sources.id AS sourceId,SUBSTRING_INDEX(SUBSTRING_INDEX(scene_str,'_',2),'_',-1) as qian ,SUBSTRING_INDEX(scene_str,'_',-1) as uuid from sources LEFT JOIN sales_amount ON sources.id = sales_amount.sourcesId LEFT JOIN services on services.id = type_id WHERE scene_str LIKE 'panopath_xiaoshou_%'";
-
-
         $pindex =Request::input('pageIndex',1);
         $star = 8*($pindex-1);
 
@@ -88,16 +86,14 @@ class IndentController extends Controller {
                     $qrcode[$i]->username = "无对应销售";
                 }
         }
-
-
-
-        if (session()->has('username')) {
+            $servicesTypeList = DB::select("select * from services");
             return view('listPage',[
                 'qrcode'=>$qrcode,
                 'requestAll'=>$requestAll,
                 'pageend'=>floor($pageend),
                 'pageindex'=>$pindex,
-                'serviceType'=>$serviceType
+                'serviceType'=>$serviceType,
+                'servicesTypeList'=>$servicesTypeList,
             ]);
         }else{
             return view('log',[
@@ -111,6 +107,7 @@ class IndentController extends Controller {
 
         public function store()
        {
-           return redirect('list');
+           $requestAll=Request::all();
+           return $requestAll;
        }
 }

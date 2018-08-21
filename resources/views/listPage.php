@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php session_start();
-      echo("<script>console.log(".json_encode($qrcode).");</script>");
+      echo("<script>console.log(".json_encode($servicesTypeList).");</script>");
 ?>
 <html lang="en">
 
@@ -181,29 +181,16 @@
                                                             <div class="modal-body">
                                                                 <form class="form-horizontal" action="/list" method="post">
                                                                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                                                                    <input type="hidden" name="username" value="<?php echo $item->username; ?>">
                                                                     <div class="form-group">
-                                                                        <input type="hidden" class="form-control" value="" >
                                                                         <div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" placeholder="Type name"> </div>
-                                                                        <div class="col-md-12 m-b-20">
-                                                                            <input id="uid" type="text" class="form-control" placeholder="Email"> </div>
-                                                                        <div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" placeholder="Phone"> </div>
-                                                                        <div class="col-md-12 m-b-20">
-                                                                            <input type="text" class="form-control" placeholder="Designation"> </div>
-                                                                        <div class="col-md-12 m-b-20">
-                                                                            <h5 class="m-t-30 m-b-10">Select boxes with optgroups</h5>
-                                                                            <select class="selectpicker" data-style="form-control">
-                                                                                <optgroup label="Picnic">
-                                                                                    <option>Mustard</option>
-                                                                                    <option>Ketchup</option>
-                                                                                    <option>Relish</option>
-                                                                                </optgroup>
-                                                                                <optgroup label="Camping">
-                                                                                    <option>Tent</option>
-                                                                                    <option>Flashlight</option>
-                                                                                    <option>Toilet Paper</option>
-                                                                                </optgroup>
+                                                                            <h5 class="m-t-30 m-b-10">选择服务类型</h5>
+                                                                            <select class="selectpicker" name="typeId" data-style="form-control">
+                                                                                <?php
+                                                                                  foreach ($servicesTypeList as $item){
+                                                                                       echo "<option value='$item->id'>$item->name</option>";
+                                                                                  }
+                                                                                ?>
                                                                             </select>
                                                                         </div>
                                                                         <div class="modal-footer">

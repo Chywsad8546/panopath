@@ -182,6 +182,7 @@
                                                                 <form class="form-horizontal" action="/list" method="post">
                                                                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                                                     <input type="hidden" name="username" value="<?php echo $item->username; ?>">
+                                                                    <input type="hidden" name="sourceId" value="<?php echo $item->sourceId; ?>">
                                                                     <div class="form-group">
                                                                         <div class="col-md-12 m-b-20">
                                                                             <h5 class="m-t-30 m-b-10">选择服务类型</h5>

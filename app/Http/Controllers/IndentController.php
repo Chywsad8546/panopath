@@ -109,8 +109,15 @@ class IndentController extends Controller {
        {
            $requestAll=Request::all();
            $typeId= $requestAll['typeId'];
-           $username= $requestAll['username'];
+           $sourceId=$requestAll['sourceId'];
+           $servicesType = DB::select("select * from services where id = ".$typeId)[0];
 
+           $username= $requestAll['username'];
+           $money=$servicesType->money;
+           $bonusMoney=$servicesType->money*$servicesType->bonus_rate;
+
+          $bool=DB::insert("insert into sales_amount(money,type_id,bonus_money,sourcesId,userName)
+			values(?,?,?,?,?)",[$money,$typeId,$bonusMoney,$sourceId,$username]);
            return redirect('list');
        }
 }

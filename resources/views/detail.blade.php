@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<?php session_start();
-  echo("<script>console.log(".json_encode($typeList).");</script>");
-?>
+
 <html lang="en">
 
 <head>
@@ -13,11 +11,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
     <title>Panopath</title>
     <!-- Bootstrap Core CSS -->
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <!-- color CSS -->
-    <link href="css/colors/blue-dark.css" id="theme" rel="stylesheet">
+    <link href="{{ asset('css/colors/blue-dark.css') }}" id="theme" rel="stylesheet">
 </head>
 
 <body class="fix-header">
@@ -37,50 +35,30 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="white-box">
-                            <h3 class="box-title">所有服务类型</h3>
+                            <?php foreach($sales as $item){ ?>                                                 
+                            <h3 class="box-title">"{{$item->userName}}"的所有订单</h3>
                             <div class="scrollable">
                                 <div class="table-responsive">
                                     <table id="demo-foo-addrow" class="table m-t-30 table-hover contact-list" data-page-size="10">
                                         <thead>
                                             <tr>
-                                                <th>No</th>
-                                                <th>serviceName</th>
-                                                <th>bonusRate</th>
-                                                <th>price</th>
+                                                <th>订单编号</th>
+                                                <th>订单类型</th>
+                                                <th>订单金额</th>
+                                                <th>订单利润</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php
-                                                foreach($typeList as $item) { ?>
-                                                 
                                              <tr>
                                                 <td>{{$item->id}}</td>
-                                                <td>
-                                                    <a href='/detail'>{{$item->name}}</a>
-                                                </td>
-                                                <td>{{$item->bonus_rate}}</td>
+                                                <td>{{$item->type_id}}</td>
                                                 <td>{{$item->money}}</td>
+                                                <td>{{$item->bonus_money}}</td>
                                                 <td>
-                                                    <a class="btn btn-info" href="/services/{{$item->id}}/edit">更改</a>
                                                 </td>
-                                                <td>
-                                                <form action='/services/{{$item->id}}' method='POST'>
-                                                    {{ csrf_field() }}
-                                                    {{ method_field('DELETE') }}
-                                                    <button class="btn btn-default waves-effect">删除</button>
-                                                </form>
-                                                </td>
-                                            </tr>  <?php
-                                        }
-                                          ?>
+                                            </tr>  
+                                        <?php } ?>
                                         </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <td colspan="2">
-                                                    <a class="btn btn-info" href="/services/create">添加新的服务</a>
-                                                </td>
-                                            </tr>
-                                        </tfoot>
                                     </table>
                                 </div>
                             </div>
@@ -98,12 +76,12 @@
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src="js/jquery.min.js"></script>
+    <script src=" {{ asset('js/jquery.min.js') }}"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src=" {{ asset('bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <!--slimscroll JavaScript -->
-    <script src="js/jquery.slimscroll.js"></script>
+    <script src="{{ asset('js/jquery.slimscroll.js') }}"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="js/custom.min.js"></script>
+    <script src="{{ asset('js/custom.min.js')}} "></script>
 </body>
 </html>

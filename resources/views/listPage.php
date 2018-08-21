@@ -11,7 +11,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
-    <title>Ample Admin Template - The Ultimate Multipurpose admin template</title>
+    <title>Panopath</title>
     <!-- Bootstrap Core CSS -->
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Footable CSS -->
@@ -46,51 +46,15 @@
     <!-- Wrapper -->
     <!-- ============================================================== -->
     <div id="wrapper">
-        <!-- ============================================================== -->
         <!-- Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
         <?php
         $a = view('Header');
         $html = response($a)->getContent();
         echo $html
         ?>
-        <!-- End Top Navigation -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <div class="navbar-default sidebar" role="navigation">
-            <div class="sidebar-nav slimscrollsidebar">
-                <div class="sidebar-head">
-                    <h3><span class="fa-fw open-close"><i class="ti-menu hidden-xs"></i><i class="ti-close visible-xs"></i></span> <span class="hide-menu">Navigation</span></h3> </div>
-                <ul class="nav" id="side-menu">
-                    <li class="devider"></li>
-                    <ul class="nav nav-second-level">
-                        <li><a  href="/services"><span class="hide-menu">服务类型</span></a></li>
-                        <li ><a class="active" href="/list"><span class="hide-menu">所有订单</span></a></li>
-                    </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
         <!-- Page Content -->
-        <!-- ============================================================== -->
         <div id="page-wrapper">
             <div class="container-fluid">
-                <div class="row bg-title">
-                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                        <h4 class="page-title">订单列表页</h4> </div>
-                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                        <ol class="breadcrumb">
-                            <li><a href="#">订单管理</a></li>
-                            <li class="active">订单列表页</li>
-                        </ol>
-                    </div>
-                    <!-- /.col-lg-12 -->
-                </div>
                 <!-- row -->
                 <div class="row">
                     <div class="col-md-12">
@@ -102,14 +66,11 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Name</th>
+                                                <th>销售用户名</th>
                                                 <th>价格</th>
                                                 <th>购买类型</th>
-                                                <th>createdAt</th>
-                                        <!--        <th>Age</th>
-                                                <th>Joining date</th>
-                                                <th>Salery</th>-->
-                                                <th>Action</th>
+                                                <th>创建时间</th>
+                                                <th>更改</th>
                                             </tr>
                                         </thead>
                                         <form id="pro_list_form" class="form-inline form-search" action="/list" pageSize="15">
@@ -130,86 +91,39 @@
                                                 <button class="fcbtn btn btn-success btn-outline btn-1b">查询</button>
                                             </div>
                                         </form>
-                                      <!--  <div class="col-lg-6 col-sm-12">
-                                            <div class="row">
-                                                <form>
-                                                <div class="col-sm-4 text-right m-b-20">
-
-                                                </div>
-                                                </form>
-                                            </div>
-                                        </div>-->
                                         <tbody>
                                         <?php
                                         //for ($i=0; $i<sizeof($qrcode); $i++) {
                                         foreach($qrcode as $item) {
-                                            echo " <tr>
-                                                <td>$item->sourceId</td>
-                                               <td>";
-                                                  if ($item->username!="无对应销售"){
-                                                      echo "<a href='/detail?username=$item->username'>$item->username</a>";
-                                                  }else{
-                                                      echo $item->username;
-                                                  }
-                                            echo "
-                                                </td>
-                                                <td> $item->money</td>
-                                              <td>"; if (!isset($item->name)&& $item->username!="无对应销售"){echo"未确认";}else {echo $item->name;} echo"</td>
-                                         
-                                                <td> $item->createdAt</td><td>
-                                             ";
-                                             if(!isset($item->type_id) && $item->username!="无对应销售"){
+                                            echo " <tr><td>$item->sourceId</td><td>";
+                                            if ($item->username!="无对应销售"){
+                                                echo "<a href='/details/$item->username'>$item->username</a>";
+                                            }
+                                            else{
+                                                echo $item->username;
+                                            }
+                                            echo "</td><td> $item->money</td><td>"; 
+                                            if (!isset($item->name)&& $item->username!="无对应销售"){
+                                                echo"未确认";
+                                            }
+                                            else{
+                                            echo $item->name;
+                                            } 
+                                            echo"</td><td> $item->createdAt</td><td>";
+                                            if(!isset($item->type_id) && $item->username!="无对应销售"){
                                                  echo" <button type=\"button\" class=\"btn btn-info update\" data-toggle=\"modal\" data-id=\"1\" data-target=\"#add-contact\">更改</button>";
-                                                   }
-                                              echo "  <button type='button' class=\"btn btn-sm btn-icon btn-pure btn-outline delete-row-btn\" data-toggle=\"tooltip\" data-original-title=\"Delete\"><i class=\"ti-close\" aria-hidden=\"true\"></i></button>
-                                                </td>
-                                            </tr>";
-                                        }
+                                             }
+                                            else if ($item->username=="无对应销售"){
+                                                echo"<h6>无对应销售无法更新订单</h3>";
+                                             }
+                                            echo "  <button type='button' class=\"btn btn-sm btn-icon btn-pure btn-outline delete-row-btn\" data-toggle=\"tooltip\" data-original-title=\"Delete\"><i class=\"ti-close\" aria-hidden=\"true\"></i></button></td></tr>";
+                                            }
                                         ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <td colspan="2">
-                                                    <button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Add New Contact</button>
-                                                </td>
-                                                <div id="add-contact" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                    <div class="modal-dialog">
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                                                <h4 class="modal-title" id="myModalLabel">Add New Contact</h4> </div>
-                                                            <div class="modal-body">
-                                                                <form class="form-horizontal" action="/list" method="post">
-                                                                    <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                                                                    <input type="hidden" name="username" value="<?php echo $item->username; ?>">
-                                                                    <input type="hidden" name="sourceId" value="<?php echo $item->sourceId; ?>">
-                                                                    <div class="form-group">
-                                                                        <div class="col-md-12 m-b-20">
-                                                                            <h5 class="m-t-30 m-b-10">选择服务类型</h5>
-                                                                            <select class="selectpicker" name="typeId" data-style="form-control">
-                                                                                <?php
-                                                                                  foreach ($servicesTypeList as $item){
-                                                                                       echo "<option value='$item->id'>$item->name</option>";
-                                                                                  }
-                                                                                ?>
-                                                                            </select>
-                                                                        </div>
-                                                                        <div class="modal-footer">
-                                                                            <button type="submit" class="btn btn-info">Save</button>
-                                                                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
-                                                                        </div>
-                                                                    </div>
-                                                                </form>
-                                                            </div>
-                                                        </div>
-                                                        <!-- /.modal-content -->
-                                                    </div>
-                                                    <!-- /.modal-dialog -->
-                                                </div>
                                                 <td colspan="7">
                                                     <div class="text-right">
-                                                     <!--   <ul class="pagination">
-                                                        </ul>-->
                                                         <ul class="pagination">
                                                             <li class="footable-page-arrow"><a data-page="first" href="/list?pageIndex=1">«</a></li>
                                                             <?php
@@ -249,35 +163,6 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="right-sidebar">
-                    <div class="slimscrollright">
-                        <div class="rpanel-title"> Service Panel <span><i class="ti-close right-side-toggle"></i></span> </div>
-                        <div class="r-panel-body">
-                            <ul id="themecolors" class="m-t-20">
-                                <li><b>With Light sidebar</b></li>
-                                <li><a href="javascript:void(0)" data-theme="default" class="default-theme">1</a></li>
-                                <li><a href="javascript:void(0)" data-theme="green" class="green-theme">2</a></li>
-                                <li><a href="javascript:void(0)" data-theme="gray" class="yellow-theme">3</a></li>
-                                <li><a href="javascript:void(0)" data-theme="blue" class="blue-theme">4</a></li>
-                                <li><a href="javascript:void(0)" data-theme="purple" class="purple-theme">5</a></li>
-                                <li><a href="javascript:void(0)" data-theme="megna" class="megna-theme">6</a></li>
-                                <li><b>With Dark sidebar</b></li>
-                                <br/>
-                                <li><a href="javascript:void(0)" data-theme="default-dark" class="default-dark-theme">7</a></li>
-                                <li><a href="javascript:void(0)" data-theme="green-dark" class="green-dark-theme">8</a></li>
-                                <li><a href="javascript:void(0)" data-theme="gray-dark" class="yellow-dark-theme">9</a></li>
-                                <li><a href="javascript:void(0)" data-theme="blue-dark" class="blue-dark-theme working">10</a></li>
-                                <li><a href="javascript:void(0)" data-theme="purple-dark" class="purple-dark-theme">11</a></li>
-                                <li><a href="javascript:void(0)" data-theme="megna-dark" class="megna-dark-theme">12</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
-            </div>
             <!-- /.container-fluid -->
             <footer class="footer text-center"> 2017 &copy; Ample Admin brought to you by themedesigner.in </footer>
         </div>
@@ -400,13 +285,3 @@
         });
     });
 </script>
-<script>
-    $('.update').each(function () {
-        $(this).click(function () {
-            var _id = $(this).data('id');
-            console.log(_id);
-            $("#uid").val(_id)
-        })
-    });
-</script>
-

@@ -15,16 +15,15 @@ use Request;
 use Illuminate\Support\Facades\DB;
 class IndentController extends Controller {
 
-    public function detail()
+    public function detail($id)
     {
-        if (session()->has('username')) {
-            $pindex =Request::input('username',1);
-
-
-            return view('detail',[
-
-            ]);
-        }else{
+        if (session()->has('username')) 
+        {
+            $sales = DB::select("select * from sales_amount where userName = $id");
+            return view('detail',['sales'=>$sales,]);
+        }
+        else
+        {
             return view('log',[
                 'faild'=>"请登录！",
             ]);
@@ -100,12 +99,9 @@ class IndentController extends Controller {
                 'faild'=>"请登录！",
             ]);
         }
-            //
-
-
     }
 
-        public function store()
+    public function store()
        {
            $requestAll=Request::all();
            $typeId= $requestAll['typeId'];
@@ -116,7 +112,7 @@ class IndentController extends Controller {
            $money=$servicesType->money;
            $bonusMoney=$servicesType->money*$servicesType->bonus_rate;
 
-          $bool=DB::insert("insert into sales_amount(money,type_id,bonus_money,sourcesId,userName)
+           $bool=DB::insert("insert into sales_amount(money,type_id,bonus_money,sourcesId,userName)
 			values(?,?,?,?,?)",[$money,$typeId,$bonusMoney,$sourceId,$username]);
            return redirect('list');
        }

@@ -2,8 +2,8 @@
 
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
 use App\Http\Requests;
-use Request;
 use Illuminate\Support\Facades\DB;
 use App\Service;
 class ServicesController extends Controller
@@ -34,22 +34,16 @@ class ServicesController extends Controller
      */
     public function create()
     {
-
-        $typeList = DB::select("select * from type_of_service");
-        $bool=DB::insert("insert into services(id,name,bonus_rate,money)
-			values(?,?,?,?)",[8,'小明',0,0]);
-
-        return redirect('/services');
-        // if (session()->has('username')) {
-        //     $typeList = DB::select("select * from services");
-        //     return view('services.index',[
-        //         'typeList'=>$typeList,
-        //     ]);
-        // }else{
-        //     return view('log',[
-        //         'faild'=>"请登录！",
-        //     ]);
-        // }
+        if (session()->has('username')) 
+        {
+            return view('services.create');
+        }
+        else
+        {
+            return view('log',[
+                'faild'=>"请登录！",
+            ]);
+        }
     }
 
     /**
@@ -60,7 +54,8 @@ class ServicesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Service::create($request->all());
+        return redirect('/services');
     }
 
     /**
@@ -82,19 +77,18 @@ class ServicesController extends Controller
      */
     public function edit($id)
     {
-
-        $service = Service::findOrFail($id);
-        return view('services.edit', compact('service'));
-        // if (session()->has('username')) {
-        //     $typeList = DB::select("select * from services");
-        //     return view('services.index',[
-        //         'typeList'=>$typeList,
-        //     ]);
-        // }else{
-        //     return view('log',[
-        //         'faild'=>"请登录！",
-        //     ]);
-        // }
+       
+        if (session()->has('username')) 
+        {
+            $service = Service::findOrFail($id);
+            return view('services.edit', compact('service'));
+        }
+        else
+        {
+            return view('log',[
+                'faild'=>"请登录！",
+            ]);
+        }
     }
 
     /**
@@ -106,7 +100,9 @@ class ServicesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return "It is working";
+        $service = Service::findOrFail($id);
+        $service->update($request->all());
+        return redirect('/services');
     }
 
     /**
@@ -120,6 +116,5 @@ class ServicesController extends Controller
         $service = Service::find($id);
         $service->delete();
         return redirect('/services');
-        // DB::delete('delete from type_of_service where id = ?', [$id]);
     }
 }

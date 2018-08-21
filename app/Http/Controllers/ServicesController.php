@@ -36,6 +36,9 @@ class ServicesController extends Controller
     {
 
         $typeList = DB::select("select * from type_of_service");
+     /*   $bool=DB::insert("insert into services(id,name,bonus_rate,money)
+			values(?,?,?,?)",[8,'小明',0,0]);*/
+
         return redirect('/services');
         // if (session()->has('username')) {
         //     $typeList = DB::select("select * from services");

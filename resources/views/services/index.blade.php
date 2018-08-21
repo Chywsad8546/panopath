@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<?php session_start(); ?>
+<?php session_start();
+  echo("<script>console.log(".json_encode($typeList).");</script>");
+?>
 <html lang="en">
 
 <head>

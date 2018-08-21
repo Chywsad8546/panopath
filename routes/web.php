@@ -53,6 +53,7 @@ Route::get('/logOut', 'LogController@logOut');
 
 
 //服务类型
+Route::resource('services','ServicesController');
 Route::get('/listOfServiceType', 'TypeOfServiceController@list');
 
 

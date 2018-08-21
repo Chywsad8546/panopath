@@ -46,9 +46,9 @@ class IndentController extends Controller {
 
         $serviceType =Request::input('service_type',"0");
         if ($serviceType=="1"){
-            $sql=$sql." and type_id != 4 ";
+            $sql=$sql." and type_id != 5 ";
         }else if ($serviceType=="2"){
-            $sql=$sql." and type_id = 4 ";
+            $sql=$sql." and type_id = 5 ";
         }else if ($serviceType=="3"){
             $sql=$sql." and type_id is null ";
         }

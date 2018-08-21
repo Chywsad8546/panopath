@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php session_start();
-/*      echo("<script>console.log(".json_encode($pageend).");</script>");*/
+      echo("<script>console.log(".json_encode($qrcode).");</script>");
 ?>
 <html lang="en">
 
@@ -160,7 +160,7 @@
                                             echo " <tr>
                                                 <td>$item->id</td>
                                                 <td>
-                                                    <a href=\"/detail?id=$item->id\"><img src=\"img/users/genu.jpg\" alt=\"user\" class=\"img-circle\" /> $item->username</a>
+                                                    <a href=\"/detail?id=$item->id&typeId=$item->type_id\"><img src=\"img/users/genu.jpg\" alt=\"user\" class=\"img-circle\" /> $item->username</a>
                                                 </td>
                                                 <td>$item->QRuuid</td>
                                                 <td>$item->qrURL</td>

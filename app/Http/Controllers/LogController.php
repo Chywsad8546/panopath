@@ -22,7 +22,7 @@ class LogController extends Controller {
 
     public function verify()
     {
-           $qrcode = DB::select("select * from qrcodes limit 0,8");
+           $qrcode = DB::select("select * from qrcodes LEFT JOIN sales_amount ON qrcodes.id = sales_amount.qrCodeId limit 0,8");
            $count = DB::select("select count(*) as cou from qrcodes")[0]->cou;
            $pageend =$count%8==0?$count/8:$count/8+1 ;
            $input=Request::all();

@@ -33,7 +33,7 @@ class IndentController extends Controller {
     {
         $requestAll=Request::all();
 
-        $sql = "select *,SUBSTRING_INDEX(SUBSTRING_INDEX(scene_str,'_',2),'_',-1) as qian ,SUBSTRING_INDEX(scene_str,'_',-1) as uuid from sources LEFT JOIN sales_amount ON sources.id = sales_amount.sourcesId LEFT JOIN services on services.id = type_id WHERE 1=1";
+        $sql = "select *,sources.id AS sourceId,SUBSTRING_INDEX(SUBSTRING_INDEX(scene_str,'_',2),'_',-1) as qian ,SUBSTRING_INDEX(scene_str,'_',-1) as uuid from sources LEFT JOIN sales_amount ON sources.id = sales_amount.sourcesId LEFT JOIN services on services.id = type_id WHERE scene_str LIKE 'panopath_xiaoshou_%'";
 
 
         $pindex =Request::input('pageIndex',1);
@@ -48,13 +48,6 @@ class IndentController extends Controller {
         }else if ($serviceType=="3"){
             $sql=$sql." and type_id is null ";
         }
-
-        $countsql = str_replace("*","count(*) as cou",$sql);
-        $count = DB::select($countsql)[0]->cou;
-        $pageend =$count%8==0?$count/8:$count/8+1;
-
-
-
 
 
         $username =Request::input('userName',null);
@@ -79,19 +72,18 @@ class IndentController extends Controller {
         }
         $sql=$sql." limit  $star ,8";
         $qrcode = DB::select($sql);
+
+        $countsql = str_replace("*","count(*) as cou",$sql);
+        $count = DB::select($countsql)[0]->cou;
+        $pageend =$count%8==0?$count/8:$count/8+1;
+
         for($i=0; $i<sizeof($qrcode); $i++) {
-            if ($qrcode[$i]->qian !='xiaoshou'){
-                array_splice($qrcode, $i, 1);
-                $i-=1;
-            }else if ($qrcode[$i]->qian =='xiaoshou'){
                 $usernames = DB::select("SELECT userName from qrcodes where qrcodes.QRuuid ='".$qrcode[$i]->uuid."'");
                 if (isset($usernames[0]->userName)){
                     $qrcode[$i]->username = $usernames[0]->userName;
                 }else{
                     $qrcode[$i]->username = "无对应销售";
                 }
-
-            }
         }
 
 

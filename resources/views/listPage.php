@@ -63,23 +63,11 @@
                 <div class="sidebar-head">
                     <h3><span class="fa-fw open-close"><i class="ti-menu hidden-xs"></i><i class="ti-close visible-xs"></i></span> <span class="hide-menu">Navigation</span></h3> </div>
                 <ul class="nav" id="side-menu">
-                    <li class="user-pro">
-                        <a href="#" class="waves-effect"><!--<img src="img/users/varun.jpg" alt="user-img" class="img-circle"> <span class="hide-menu">--> <?php  echo Session::get('username') ?><span class="fa arrow"></span></span>
-                        </a>
-                        <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
-                            <li><a href="javascript:void(0)"><i class="ti-user"></i> <span class="hide-menu">My Profile</span></a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-wallet"></i> <span class="hide-menu">My Balance</span></a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-email"></i> <span class="hide-menu">Inbox</span></a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-settings"></i> <span class="hide-menu">Account Setting</span></a></li>
-                            <li><a href="/logOut"><i class="fa fa-power-off"></i> <span class="hide-menu">Logout</span></a></li>
-                        </ul>
-                    </li>
                     <li class="devider"></li>
-                    <li> <a href="forms.html" class="waves-effect active"><i class="mdi mdi-clipboard-text fa-fw"></i> <span class="hide-menu">Management<span class="fa arrow"></span></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a  href="/services"><i class="fa-fw">B</i><span class="hide-menu">Type Of Service</span></a></li>
-                            <li><a class="active" href="/list"><i class="fa-fw">B</i><span class="hide-menu">IndentList</span></a></li>
-                        </ul>
+                    <ul class="nav nav-second-level">
+                        <li><a  href="/services"><span class="hide-menu">服务类型</span></a></li>
+                        <li ><a class="active" href="/list"><span class="hide-menu">所有订单</span></a></li>
+                    </ul>
                     </li>
                 </ul>
             </div>
@@ -96,8 +84,6 @@
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                         <h4 class="page-title">订单列表页</h4> </div>
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                        <button class="right-side-toggle waves-effect waves-light btn-info btn-circle pull-right m-l-20"><i class="ti-settings text-white"></i></button>
-                        <a href="javascript: void(0);" target="_blank" class="btn btn-danger pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Buy Admin Now</a>
                         <ol class="breadcrumb">
                             <li><a href="#">订单管理</a></li>
                             <li class="active">订单列表页</li>
@@ -158,7 +144,7 @@
                                         //for ($i=0; $i<sizeof($qrcode); $i++) {
                                         foreach($qrcode as $item) {
                                             echo " <tr>
-                                                <td>$item->id</td>
+                                                <td>$item->sourceId</td>
                                                <td>
                                                     <a href=\"/detail?id=$item->id&typeId=$item->type_id\">$item->username</a>
                                                 </td>
@@ -167,11 +153,12 @@
                                            <!--logo
                                                 <span class=\"label-danger\">Designer</span>-->
 
-                                                <td> $item->createdAt</td>
-                                     
-                                                <td>
-                                                    <button type=\"button\" class=\"btn btn-info update\" data-toggle=\"modal\" data-id=\"1\" data-target=\"#add-contact\">更改</button>
-                                                    <button type=\"button\" class=\"btn btn-sm btn-icon btn-pure btn-outline delete-row-btn\" data-toggle=\"tooltip\" data-original-title=\"Delete\"><i class=\"ti-close\" aria-hidden=\"true\"></i></button>
+                                                <td> $item->createdAt</td><td>
+                                             ";
+                                             if(!isset($item->type_id) && $item->username!="无对应销售"){
+                                                 echo" <button type=\"button\" class=\"btn btn-info update\" data-toggle=\"modal\" data-id=\"1\" data-target=\"#add-contact\">更改</button>";
+                                                   }
+                                              echo "  <button type='button' class=\"btn btn-sm btn-icon btn-pure btn-outline delete-row-btn\" data-toggle=\"tooltip\" data-original-title=\"Delete\"><i class=\"ti-close\" aria-hidden=\"true\"></i></button>
                                                 </td>
                                             </tr>";
                                         }

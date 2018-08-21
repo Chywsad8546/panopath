@@ -57,26 +57,11 @@
                 <div class="sidebar-head">
                     <h3><span class="fa-fw open-close"><i class="ti-menu hidden-xs"></i><i class="ti-close visible-xs"></i></span> <span class="hide-menu">Navigation</span></h3> </div>
                 <ul class="nav" id="side-menu">
-                    <li class="user-pro">
-                        <a href="#" class="waves-effect"><img src="img/users/varun.jpg" alt="user-img" class="img-circle"> <span class="hide-menu"> Steve Gection<span class="fa arrow"></span></span>
-                        </a>
-                        <ul class="nav nav-second-level collapse" aria-expanded="false" style="height: 0px;">
-                            <li><a href="javascript:void(0)"><i class="ti-user"></i> <span class="hide-menu">My Profile</span></a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-wallet"></i> <span class="hide-menu">My Balance</span></a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-email"></i> <span class="hide-menu">Inbox</span></a></li>
-                            <li><a href="javascript:void(0)"><i class="ti-settings"></i> <span class="hide-menu">Account Setting</span></a></li>
-                            <li><a href="/logOut"><i class="fa fa-power-off"></i> <span class="hide-menu">Logout</span></a></li>
-                        </ul>
-                    </li>
                     <li class="devider"></li>
-                    <li> <a href="forms.html" class="waves-effect"><i class="mdi mdi-clipboard-text fa-fw"></i> <span class="hide-menu">Management<span class="fa arrow"></span></span></a>
-                        <ul class="nav nav-second-level">
-                            <li><a  href="/listOfServiceType"><i class="fa-fw">B</i><span class="hide-menu">Type Of Service</span></a></li>
-                            <li><a  href="/list"><i class="fa-fw">B</i><span class="hide-menu">IndentList</span></a></li>
-                            <!--<li><a href="form-layout.html"><i class="fa-fw">L</i><span class="hide-menu">Form Layout</span></a></li>
-                            <li><a href="form-advanced.html"><i class="fa-fw">A</i><span class="hide-menu">Form Addons</span></a></li>
-                            <li><a href="form-material-elements.html"><i class="fa-fw">M</i><span class="hide-menu">Form Material</span></a></li>-->
-                        </ul>
+                    <ul class="nav nav-second-level">
+                        <li><a  href="/services"><span class="hide-menu">服务类型</span></a></li>
+                        <li ><a  href="/list"><span class="hide-menu">所有订单</span></a></li>
+                    </ul>
                     </li>
                 </ul>
             </div>

@@ -36,9 +36,7 @@ class ServicesController extends Controller
     {
 
         $typeList = DB::select("select * from type_of_service");
-        return view('services.index',[
-                'typeList'=>$typeList,
-            ]);
+        return redirect('/services');
         // if (session()->has('username')) {
         //     $typeList = DB::select("select * from services");
         //     return view('services.index',[

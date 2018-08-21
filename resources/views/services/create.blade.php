@@ -61,7 +61,7 @@
                 <ul class="nav" id="side-menu">
                     <li class="devider"></li>
                         <ul class="nav nav-second-level">
-                            <li><a class="active" href="/listOfServiceType"><span class="hide-menu">服务类型</span></a></li>
+                            <li><a class="active" href="/services"><span class="hide-menu">服务类型</span></a></li>
                             <li ><a  href="/list"><span class="hide-menu">所有订单</span></a></li>
                         </ul>
                     </li>

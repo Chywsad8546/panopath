@@ -149,10 +149,8 @@
                                                     <a href=\"/detail?id=$item->id&typeId=$item->type_id\">$item->username</a>
                                                 </td>
                                                 <td> $item->money</td>
-                                              <td> $item->name</td>
-                                           <!--logo
-                                                <span class=\"label-danger\">Designer</span>-->
-
+                                              <td>"; if (!isset($item->name)&& $item->username!="无对应销售"){echo"未确认";}else {echo $item->name;} echo"</td>
+                                         
                                                 <td> $item->createdAt</td><td>
                                              ";
                                              if(!isset($item->type_id) && $item->username!="无对应销售"){

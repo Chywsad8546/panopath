@@ -145,8 +145,13 @@
                                         foreach($qrcode as $item) {
                                             echo " <tr>
                                                 <td>$item->sourceId</td>
-                                               <td>
-                                                    <a href=\"/detail?id=$item->id&typeId=$item->type_id\">$item->username</a>
+                                               <td>";
+                                                  if ($item->username!="无对应销售"){
+                                                      echo "<a href=''/detail?id=$item->id&typeId=$item->type_id'>$item->username</a>";
+                                                  }else{
+                                                      echo $item->username;
+                                                  }
+                                            echo "
                                                 </td>
                                                 <td> $item->money</td>
                                               <td>"; if (!isset($item->name)&& $item->username!="无对应销售"){echo"未确认";}else {echo $item->name;} echo"</td>

@@ -147,7 +147,7 @@
                                                 <td>$item->sourceId</td>
                                                <td>";
                                                   if ($item->username!="无对应销售"){
-                                                      echo "<a href=''/detail?id=$item->id&typeId=$item->type_id'>$item->username</a>";
+                                                      echo "<a href='/detail?username=$item->username'>$item->username</a>";
                                                   }else{
                                                       echo $item->username;
                                                   }
@@ -179,7 +179,8 @@
                                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                                                 <h4 class="modal-title" id="myModalLabel">Add New Contact</h4> </div>
                                                             <div class="modal-body">
-                                                                <from class="form-horizontal form-material">
+                                                                <form class="form-horizontal" action="/list" method="post">
+                                                                    <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                                                     <div class="form-group">
                                                                         <input type="hidden" class="form-control" value="" >
                                                                         <div class="col-md-12 m-b-20">
@@ -205,16 +206,12 @@
                                                                                 </optgroup>
                                                                             </select>
                                                                         </div>
-                                                                      <!--  <div class="col-md-12 m-b-20">
-                                                                            <div class="fileupload btn btn-danger btn-rounded waves-effect waves-light"><span><i class="ion-upload m-r-5"></i>Upload Contact Image</span>
-                                                                                <input type="file" class="upload"> </div>
-                                                                        </div>-->
+                                                                        <div class="modal-footer">
+                                                                            <button type="submit" class="btn btn-info">Save</button>
+                                                                            <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
+                                                                        </div>
                                                                     </div>
-                                                                </from>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">Save</button>
-                                                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">Cancel</button>
+                                                                </form>
                                                             </div>
                                                         </div>
                                                         <!-- /.modal-content -->

@@ -153,7 +153,7 @@
                                                                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                                                                 <h4 class="modal-title" id="myModalLabel">添加新的服务</h4> </div>
                                                             <div class="modal-body">
-                                                                <from class="form-horizontal form-material">
+                                                                <form class="form-horizontal form-material">
                                                                     <div class="form-group">
                                                                         <input type="hidden" class="form-control" value="" >
                                                                         <div class="col-md-12 m-b-20">
@@ -163,7 +163,7 @@
                                                                         <div class="col-md-12 m-b-20">
                                                                             <input type="text" class="form-control" placeholder="利润率"> </div>
                                                                     </div>
-                                                                </from>
+                                                                </form>
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">更新</button>

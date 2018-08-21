@@ -54,12 +54,12 @@ Route::get('/logOut', 'LogController@logOut');
 
 //服务类型
 Route::resource('services','ServicesController');
-Route::get('/listOfServiceType', 'TypeOfServiceController@list');
+Route::resource('/listOfServiceType', 'TypeOfServiceController@list');
 
 
 //訂單
 
 Route::get('/detail', 'IndentController@detail');
 
-Route::get('/list', 'IndentController@list');
+Route::resource('/list', 'IndentController');
 

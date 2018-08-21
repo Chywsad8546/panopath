@@ -18,6 +18,9 @@ class IndentController extends Controller {
     public function detail()
     {
         if (session()->has('username')) {
+            $pindex =Request::input('username',1);
+
+
             return view('detail',[
 
             ]);
@@ -29,7 +32,7 @@ class IndentController extends Controller {
     }
 
 
-    public function list()
+    public function index()
     {
         $requestAll=Request::all();
 
@@ -88,8 +91,6 @@ class IndentController extends Controller {
 
 
 
-
-
         if (session()->has('username')) {
             return view('listPage',[
                 'qrcode'=>$qrcode,
@@ -107,4 +108,9 @@ class IndentController extends Controller {
 
 
     }
+
+        public function store()
+       {
+           return redirect('list');
+       }
 }

@@ -118,7 +118,7 @@
                     <li class="col-sm-3">
                         <ul>
                             <li class="dropdown-header">Management</li>
-                            <li><a href="/listOfServiceType">Type Of Service</a></li>
+                            <li><a href="/services">Type Of Service</a></li>
                             <li><a href="/list">IndentList</a></li>
                         </ul>
                     </li>

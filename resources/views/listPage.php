@@ -77,7 +77,7 @@
                     <li class="devider"></li>
                     <li> <a href="forms.html" class="waves-effect active"><i class="mdi mdi-clipboard-text fa-fw"></i> <span class="hide-menu">Management<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li><a  href="/listOfServiceType"><i class="fa-fw">B</i><span class="hide-menu">Type Of Service</span></a></li>
+                            <li><a  href="/services"><i class="fa-fw">B</i><span class="hide-menu">Type Of Service</span></a></li>
                             <li><a class="active" href="/list"><i class="fa-fw">B</i><span class="hide-menu">IndentList</span></a></li>
                         </ul>
                     </li>

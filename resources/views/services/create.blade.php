@@ -11,18 +11,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
     <title>Ample Admin Template - The Ultimate Multipurpose admin template</title>
     <!-- Bootstrap Core CSS -->
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Footable CSS -->
-    <link href="footable/css/footable.core.css" rel="stylesheet">
-    <link href="bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
-    <!-- Menu CSS -->
-    <link href="sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
-    <!-- animation CSS -->
-    <link href="css/animate.css" rel="stylesheet">
+    <link href="{{ asset('bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <!-- color CSS -->
-    <link href="css/colors/blue-dark.css" id="theme" rel="stylesheet">
+    <link href="{{ asset('css/colors/blue-dark.css') }}" id="theme" rel="stylesheet">
 </head>
 
 <body class="fix-header">
@@ -36,10 +29,10 @@
                     <!-- Logo -->
                     <a class="logo" href="index.html">
                         <!-- Logo icon image, you can use font-icon also --><b>
-                        <!--This is dark logo icon--><img src="img/admin-logo.png" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="img/admin-logo-dark.png" alt="home" class="light-logo" />
+                        <!--This is dark logo icon--><img src="{{ asset('img/admin-logo.png')}}" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="{{ asset('img/admin-logo-dark.png')}}" alt="home" class="light-logo" />
                      </b>
                         <!-- Logo text image you can use text also --><span class="hidden-xs">
-                        <!--This is dark logo text--><img src="img/admin-text.png" alt="home" class="dark-logo" /><!--This is light logo text--><img src="img/admin-text-dark.png" alt="home" class="light-logo" />
+                        <!--This is dark logo text--><img src="{{ asset('img/admin-text.png')}} " alt="home" class="dark-logo"/><!--This is light logo text--><img src="{{ asset('img/admin-text-dark.png')}}" alt="home" class="light-logo" />
                      </span> </a>
                 </div>
                 <!-- /Logo -->
@@ -81,21 +74,20 @@
                         <div class="white-box">
                             <h3 class="box-title">添加新的服务</h3>
                                 <div class="modal-body">
-                                    <form method="post" action="/services/{{$service->id}}" class="form-horizontal form-material">
+                                    <form method="post" action="/services" class="form-horizontal form-material">
                                         <div class="form-group">
-                                            <input type="hidden" class="form-control" value="" >
+                                            {{ csrf_field() }}
                                             <div class="col-md-12 m-b-20">
-                                                <input type="text" name="name" value="{{$service->name}}" class="form-control" placeholder="服务名称"> </div>
+                                                <input type="text" name="name" class="form-control" placeholder="服务名称"> </div>
                                             <div class="col-md-12 m-b-20">
-                                                <input type="text" name="money" value="{{$service->money}}" class="form-control" placeholder="服务价格"> </div>
+                                                <input type="text" name="money" class="form-control" placeholder="服务价格"> </div>
                                             <div class="col-md-12 m-b-20">
-                                                <input type="text" name="bonus_rate" value="{{$service->bonus_rate}}" class="form-control" placeholder="利润率"> </div>
-                                            <input type="submia" name="submit">
+                                                <input type="text" name="bonus_rate" class="form-control" placeholder="利润率"> </div>
+                                            <input type="submit" name="submit" value="添加" class="btn btn-info" data-disable-with="xiu gai">
+                                            <a class="btn btn-default" href="/services">返回</a>
                                         </div>
                                     </form>
                                 </div>
-                                <button type="button" class="btn btn-info waves-effect" data-dismiss="modal">添加</button>
-                                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">返回</button>
                             </div>
                         </div>
                     </div>
@@ -108,14 +100,12 @@
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src="js/jquery.min.js"></script>
+    <script src=" {{ asset('js/jquery.min.js') }}"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- Menu Plugin JavaScript -->
-    <script src="sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <script src=" {{ asset('bootstrap/dist/js/bootstrap.min.js') }}"></script>
     <!--slimscroll JavaScript -->
-    <script src="js/jquery.slimscroll.js"></script>
+    <script src="{{ asset('js/jquery.slimscroll.js') }}"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="js/custom.min.js"></script>
+    <script src="{{ asset('js/custom.min.js')}} "></script>
 </body>
 </html>

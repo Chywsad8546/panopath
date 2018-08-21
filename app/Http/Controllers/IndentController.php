@@ -108,6 +108,9 @@ class IndentController extends Controller {
         public function store()
        {
            $requestAll=Request::all();
-           return $requestAll;
+           $typeId= $requestAll['typeId'];
+           $username= $requestAll['username'];
+
+           return redirect('list');
        }
 }

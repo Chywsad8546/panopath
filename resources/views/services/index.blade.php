@@ -71,7 +71,7 @@
                                              <tr>
                                                 <td>{{$item->id}}</td>
                                                 <td>
-                                                    <a href='/detail'>{{$item->name}}</a>
+                                                    <a href='javascript:void(0);'>{{$item->name}}</a>
                                                 </td>
                                                 <td>{{$item->bonus_rate}}</td>
                                                 <td>{{$item->money}}</td>

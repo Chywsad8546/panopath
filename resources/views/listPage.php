@@ -111,7 +111,7 @@
                                                 echo "<a href='/details/$item->username'>$item->username</a>";
                                             }
                                             else{
-                                                echo $item->username;
+                                                echo "<a href='javascript:void(0);'>$item->username</a>";
                                             }
                                             echo "</td><td> $item->money</td><td>"; 
                                             if (!isset($item->name)&& $item->username!="无对应销售"){

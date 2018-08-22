@@ -49,18 +49,19 @@ class IndentController extends Controller {
 
         $strexport="订单编号\t销售用户名\t价格\t提成\t购买类型\t创建时间\r";
         foreach ($qrcode as $row){
-            $strexport.=$row->sourceId."\t";
-            $strexport.=$row->username."\t";
-            $strexport.=$row->money."\t";
-            $strexport.=$row->bonus_money."\t";
-            if (!isset($row->name)&& $row->username!="无对应销售"){
-                $strexport.="未确认\t";
-            }else{
-                $strexport.=$row->name."\t";
+            //判断有没有购买
+            if ($row->name!='未付款' && isset($row->name)){
+                $strexport.=$row->sourceId."\t";
+                $strexport.=$row->username."\t";
+                $strexport.=$row->money."\t";
+                $strexport.=$row->bonus_money."\t";
+                if (!isset($row->name)&& $row->username!="无对应销售"){
+                    $strexport.="未确认\t";
+                }else{
+                    $strexport.=$row->name."\t";
+                }
+                $strexport.=$row->createdAt."\r";
             }
-
-            $strexport.=$row->createdAt."\r";
-
         }
         $strexport=iconv('UTF-8',"GB2312//IGNORE",$strexport);
         exit($strexport);

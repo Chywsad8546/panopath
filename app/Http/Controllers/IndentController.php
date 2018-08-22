@@ -74,8 +74,7 @@ class IndentController extends Controller {
     {
         if (session()->has('username')) 
         {
-            $sales = DB::select("select 
- sales_amount.id as id,sales_amount.money,sales_amount.type_id,sales_amount.bonus_money,sales_amount.sourcesId,services.id as sid,services.`name` 
+            $sales = DB::select("select sales_amount.id as id,sales_amount.money,sales_amount.type_id,sales_amount.bonus_money,sales_amount.sourcesId,services.id as sid,services.`name` 
        from sales_amount LEFT JOIN services ON sales_amount.type_id = services.id where userName = $id");
             $bonusMoneyCount=0;
             foreach ($sales as $item) {

@@ -25,6 +25,20 @@
         $html = response($a)->getContent();
         echo $html
         ?>
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav slimscrollsidebar">
+                <div class="sidebar-head">
+                    <h3><span class="fa-fw open-close"><i class="ti-menu hidden-xs"></i><i class="ti-close visible-xs"></i></span> <span class="hide-menu">Panopath</span></h3> </div>
+                <ul class="nav" id="side-menu">
+                    <li class="devider"></li>
+                    <ul class="nav nav-second-level">
+                        <li><a class="active" href="/services"><span class="hide-menu">服务类型</span></a></li>
+                        <li ><a  href="/list"><span class="hide-menu">所有订单</span></a></li>
+                    </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <!-- Page Content -->
         <!-- ============================================================== -->
         <div id="page-wrapper">
@@ -67,5 +81,7 @@
     <script src="{{ asset('js/jquery.slimscroll.js') }}"></script>
     <!-- Custom Theme JavaScript -->
     <script src="{{ asset('js/custom.min.js')}} "></script>
+        <!-- Menu Plugin JavaScript -->
+        <script src="{{asset('sidebar-nav/dist/sidebar-nav.min.js')}}"></script>
 </body>
 </html>

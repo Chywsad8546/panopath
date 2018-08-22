@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php session_start();
-      echo("<script>console.log(".json_encode($servicesTypeList).");</script>");
+      echo("<script>console.log(".json_encode($qrcode).");</script>");
 ?>
 <html lang="en">
 
@@ -40,6 +40,20 @@
         $html = response($a)->getContent();
         echo $html
         ?>
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav slimscrollsidebar">
+                <div class="sidebar-head">
+                    <h3><span class="fa-fw open-close"><i class="ti-menu hidden-xs"></i><i class="ti-close visible-xs"></i></span> <span class="hide-menu">Panopath</span></h3> </div>
+                <ul class="nav" id="side-menu">
+                    <li class="devider"></li>
+                    <ul class="nav nav-second-level">
+                        <li><a  href="/services"><span class="hide-menu">服务类型</span></a></li>
+                        <li ><a class="active" href="/list"><span class="hide-menu">所有订单</span></a></li>
+                    </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <!-- Page Content -->
         <!-- ============================================================== -->
         <div id="page-wrapper">
@@ -108,17 +122,14 @@
                                             } 
                                             echo"</td><td> $item->createdAt</td><td>";
                                             if(!isset($item->type_id) && $item->username!="无对应销售"){
-                                                 echo" <button type=\"button\" class=\"btn btn-info update\" data-toggle=\"modal\" data-id=\"1\" data-target=\"#add-contact\">更改</button>";
+                                                 echo" <button type=\"button\" class=\"btn btn-info update\" data-toggle=\"modal\" data-username='$item->username' data-id=\"$item->sourceId\" data-target=\"#add-contact\">更改</button>";
                                              }
-                                            echo "  <button type='button' class=\"btn btn-sm btn-icon btn-pure btn-outline delete-row-btn\" data-toggle=\"tooltip\" data-original-title=\"Delete\"><i class=\"ti-close\" aria-hidden=\"true\"></i></button></td></tr>";
+                                            echo "  <button type='button' class=\"btn btn-sm btn-icon btn-pure btn-outline delete-row-btn\"  data-toggle=\"tooltip\" data-original-title=\"Delete\"><i class=\"ti-close\" aria-hidden=\"true\"></i></button></td></tr>";
                                             }
                                         ?>
                                         </tbody>
                                         <tfoot>
                                             <tr>
-                                                <td colspan="2">
-                                                    <button type="button" class="btn btn-info btn-rounded" data-toggle="modal" data-target="#add-contact">Add New Contact</button>
-                                                </td>
                                                 <div id="add-contact" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                                     <div class="modal-dialog">
                                                         <div class="modal-content">
@@ -128,8 +139,8 @@
                                                             <div class="modal-body">
                                                                 <form class="form-horizontal" action="/list" method="post">
                                                                     <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                                                                    <input type="hidden" name="username" value="<?php echo $item->username; ?>">
-                                                                    <input type="hidden" name="sourceId" value="<?php echo $item->sourceId; ?>">
+                                                                    <input type="hidden" id="SSTypeName" name="username" value="">
+                                                                    <input type="hidden" id="souceServiceTypeId" name="sourceId" value="">
                                                                     <div class="form-group">
                                                                         <div class="col-md-12 m-b-20">
                                                                             <h5 class="m-t-30 m-b-10">选择服务类型</h5>
@@ -242,6 +253,7 @@
 
 
 <script>
+
     jQuery(document).ready(function() {
         // Switchery
         var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
@@ -319,8 +331,10 @@
     $('.update').each(function () {
         $(this).click(function () {
             var _id = $(this).data('id');
-            console.log(_id);
-            $("#uid").val(_id)
+            var _username= $(this).data('username');
+            $("#SSTypeName").val(_username);
+            $("#souceServiceTypeId").val(_id);
+            console.log($("#SSTypeName"));
         })
     });
 </script>

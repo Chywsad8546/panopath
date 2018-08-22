@@ -19,8 +19,18 @@ class IndentController extends Controller {
     {
         if (session()->has('username')) 
         {
-            $sales = DB::select("select * from sales_amount where userName = $id");
-            return view('detail',['sales'=>$sales,]);
+            $sales = DB::select("select 
+ sales_amount.id as id,sales_amount.money,sales_amount.type_id,sales_amount.bonus_money,sales_amount.sourcesId,services.id as sid,services.`name` 
+       from sales_amount LEFT JOIN services ON sales_amount.type_id = services.id where userName = $id");
+            $bonusMoneyCount=0;
+            foreach ($sales as $item) {
+                $bonusMoneyCount+=$item->bonus_money;
+            }
+            return view('detail', [
+                'sales'=>$sales,
+                 'userName'=>$id,
+                'bonusMoneyCount'=>$bonusMoneyCount
+                ]);
         }
         else
         {
@@ -70,10 +80,11 @@ class IndentController extends Controller {
                 $sql=$sql." and scene_str like '无匹配'";
             }
         }
-        $sql=$sql." limit  $star ,8";
-        $qrcode = DB::select($sql);
+
 
         $countsql = str_replace("*","count(*) as cou",$sql);
+            $sql=$sql." limit  $star ,8";
+            $qrcode = DB::select($sql);
         $count = DB::select($countsql)[0]->cou;
         $pageend =$count%8==0?$count/8:$count/8+1;
 

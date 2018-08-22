@@ -14,6 +14,60 @@ use App\Http\Requests;
 use Request;
 use Illuminate\Support\Facades\DB;
 class IndentController extends Controller {
+    public function exportExcel(){
+        $sql = "select *,sources.id AS sourceId,SUBSTRING_INDEX(SUBSTRING_INDEX(scene_str,'_',2),'_',-1) as qian ,SUBSTRING_INDEX(scene_str,'_',-1) as uuid from sources LEFT JOIN sales_amount ON sources.id = sales_amount.sourcesId LEFT JOIN services on services.id = type_id WHERE scene_str LIKE 'panopath_xiaoshou_%'";
+        $cusername=DB::select("SELECT QRuuid from qrcodes");
+
+        if (sizeof($cusername)>0){
+            for($i=0; $i<sizeof($cusername); $i++) {
+                if ($i==0){
+                    $sql=$sql." and ( scene_str like '%".$cusername[$i]->QRuuid."%'";
+                }else{
+                    $sql=$sql." or scene_str like '%".$cusername[$i]->QRuuid."%'";
+                }
+
+                if ($i==(sizeof($cusername)-1)){
+                    $sql=$sql.")";
+                }
+            }
+        }else{
+            $sql=$sql." and scene_str like '无匹配'";
+        }
+
+        $qrcode = DB::select($sql);
+        for($i=0; $i<sizeof($qrcode); $i++) {
+            $usernames = DB::select("SELECT userName from qrcodes where qrcodes.QRuuid ='".$qrcode[$i]->uuid."'");
+            if (isset($usernames[0]->userName)){
+                $qrcode[$i]->username = $usernames[0]->userName;
+            }else{
+                $qrcode[$i]->username = "无对应销售";
+            }
+        }
+
+        header("Content-type:application/vnd.ms-excel");
+        header("Content-Disposition:filename=Panopath.xls");
+
+        $strexport="订单编号\t销售用户名\t价格\t提成\t购买类型\t创建时间\r";
+        foreach ($qrcode as $row){
+            $strexport.=$row->sourceId."\t";
+            $strexport.=$row->username."\t";
+            $strexport.=$row->money."\t";
+            $strexport.=$row->bonus_money."\t";
+            if (!isset($row->name)&& $row->username!="无对应销售"){
+                $strexport.="未确认\t";
+            }else{
+                $strexport.=$row->name."\t";
+            }
+
+            $strexport.=$row->createdAt."\r";
+
+        }
+        $strexport=iconv('UTF-8',"GB2312//IGNORE",$strexport);
+        exit($strexport);
+
+        return redirect('list');
+    }
+
 
     public function detail($id)
     {

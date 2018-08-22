@@ -33,3 +33,6 @@ Route::get('/details/{id}', 'IndentController@detail');
 
 Route::resource('/list', 'IndentController');
 
+//注销
+Route::get('/exportExcel', 'IndentController@exportExcel');
+

@@ -165,6 +165,7 @@
                                                     <!-- /.modal-dialog -->
                                                 </div>
                                                 <td colspan="7">
+                                                    <button onclick="exportEx()" class="fcbtn btn btn-success btn-outline ">导出Excel</button>
                                                     <div class="text-right">
                                                      <!--   <ul class="pagination">
                                                         </ul>-->
@@ -253,6 +254,11 @@
 
 
 <script>
+
+    function exportEx(){
+        console.log("a")
+        window.location.href='/exportExcel';
+    }
 
     jQuery(document).ready(function() {
         // Switchery

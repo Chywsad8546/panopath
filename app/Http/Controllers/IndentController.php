@@ -15,7 +15,11 @@ use Request;
 use Illuminate\Support\Facades\DB;
 class IndentController extends Controller {
     public function exportExcel(){
-        $sql = "select *,sources.id AS sourceId,SUBSTRING_INDEX(SUBSTRING_INDEX(scene_str,'_',2),'_',-1) as qian ,SUBSTRING_INDEX(scene_str,'_',-1) as uuid from sources LEFT JOIN sales_amount ON sources.id = sales_amount.sourcesId LEFT JOIN services on services.id = type_id WHERE scene_str LIKE 'panopath_xiaoshou_%'";
+        $sql = "select *,sources.id AS sourceId,SUBSTRING_INDEX(SUBSTRING_INDEX(scene_str,'_',2),'_',-1) as qian ,
+                SUBSTRING_INDEX(scene_str,'_',-1) as uuid from sources 
+                LEFT JOIN sales_amount ON sources.id = sales_amount.sourcesId 
+                LEFT JOIN services on services.id = type_id 
+                WHERE scene_str LIKE 'panopath_xiaoshou_%'";
         $cusername=DB::select("SELECT QRuuid from qrcodes");
 
         if (sizeof($cusername)>0){
@@ -74,8 +78,9 @@ class IndentController extends Controller {
     {
         if (session()->has('username')) 
         {
-            $sales = DB::select("select sales_amount.id as id,sales_amount.money,sales_amount.type_id,sales_amount.bonus_money,sales_amount.sourcesId,services.id as sid,services.`name` 
-       from sales_amount LEFT JOIN services ON sales_amount.type_id = services.id where userName = $id");
+            $sales = DB::select("select sales_amount.id as id,sales_amount.money,sales_amount.type_id,
+                                       sales_amount.bonus_money,sales_amount.sourcesId,services.id as sid,services.`name` 
+                                       from sales_amount LEFT JOIN services ON sales_amount.type_id = services.id where userName = $id");
             $bonusMoneyCount=0;
             foreach ($sales as $item) {
                 $bonusMoneyCount+=$item->bonus_money;
@@ -99,7 +104,10 @@ class IndentController extends Controller {
     {
         $requestAll=Request::all();
         if (session()->has('username')) {
-        $sql = "select *,sources.id AS sourceId,SUBSTRING_INDEX(SUBSTRING_INDEX(scene_str,'_',2),'_',-1) as qian ,SUBSTRING_INDEX(scene_str,'_',-1) as uuid from sources LEFT JOIN sales_amount ON sources.id = sales_amount.sourcesId LEFT JOIN services on services.id = type_id WHERE scene_str LIKE 'panopath_xiaoshou_%'";
+        $sql = "select *,sources.id AS sourceId,SUBSTRING_INDEX(SUBSTRING_INDEX(scene_str,'_',2),'_',-1) as qian ,
+                SUBSTRING_INDEX(scene_str,'_',-1) as uuid 
+                from sources LEFT JOIN sales_amount ON sources.id = sales_amount.sourcesId 
+                LEFT JOIN services on services.id = type_id WHERE scene_str LIKE 'panopath_xiaoshou_%'";
         $pindex =Request::input('pageIndex',1);
         $star = 8*($pindex-1);
 

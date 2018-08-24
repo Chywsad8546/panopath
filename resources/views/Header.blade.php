@@ -14,5 +14,15 @@
             <li><a href="/services">服务类型</a></li>
             <li><a href="/list">所有订单</a></li>
         </ul>
+        <ul class="nav navbar-top-links navbar-right pull-right">
+            <li class="dropdown">
+                <a class="dropdown-toggle profile-pic" data-toggle="dropdown" href="#"><b class="hidden-xs">用户:<?php if (isset($requestAll['userName'])){echo "value='".$requestAll['userName']."'";} ?> </b><span class="caret"></span> </a>
+                <ul class="dropdown-menu dropdown-user animated flipInY">
+                    <li><a href="/logOut"><i class="fa fa-power-off"></i>退出登录</a></li>
+                </ul>
+                <!-- /.dropdown-user -->
+            </li>
+            <!-- /.dropdown -->
+        </ul>
     </div>
 </nav>

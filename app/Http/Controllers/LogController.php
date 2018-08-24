@@ -29,7 +29,10 @@ class LogController extends Controller {
         $pwd = $requestAll['pwd'];
 
 
-        if ($pwd == 'admin' && $username == 'admin'){
+        $user=DB::select("select * from user where name ='".$username."' and pwd = '".$pwd."'");
+
+
+       if (sizeof($user)>0){
 
             //用户储存到session
             session(['username'=> $username]);

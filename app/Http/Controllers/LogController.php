@@ -36,10 +36,9 @@ class LogController extends Controller {
 
             //用户储存到session
             session(['username'=> $username]);
-
             return redirect('/list');
         }else{
-            return view('log',[
+            return view('/log',[
                 'faild'=>"用户名密码错误！",
             ]);
         }
@@ -50,7 +49,7 @@ class LogController extends Controller {
     public function logOut()
     {
         session()->forget('username');
-        return view('log',[
+        return view('/log',[
             'faild'=>"",
         ]);
     }

@@ -78,7 +78,7 @@ mysqli_close($mysqli);*/
                                 <input id="checkbox-signup" type="checkbox">
                                 <label for="checkbox-signup"> Remember me </label>
                             </div>
-                            <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Forgot pwd?</a> </div>
+                       <!--     <a href="javascript:void(0)" id="to-recover" class="text-dark pull-right"><i class="fa fa-lock m-r-5"></i> Forgot pwd?</a> </div>-->
                     </div>
                     <div class="form-group text-center m-t-20">
                         <div class="col-xs-12">
@@ -90,7 +90,7 @@ mysqli_close($mysqli);*/
                             <button class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Log In</button>
                         </div>
                     </div>
-                    <div class="row">
+                    <!--<div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 m-t-10 text-center">
                             <div class="social">
                                 <a href="javascript:void(0)" class="btn  btn-facebook" data-toggle="tooltip" title="Login with Facebook"> <i aria-hidden="true" class="fa fa-facebook"></i> </a>
@@ -102,7 +102,7 @@ mysqli_close($mysqli);*/
                         <div class="col-sm-12 text-center">
                             <p>Don't have an account? <a href="register2.html" class="text-primary m-l-5"><b>Sign Up</b></a></p>
                         </div>
-                    </div>
+                    </div>-->
                 </form>
                 <form class="form-horizontal" id="recoverform" action="index.html">
                     <div class="form-group ">

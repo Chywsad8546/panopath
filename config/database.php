@@ -41,10 +41,10 @@ return [
 
         'mysql' => [
             'driver'    => 'mysql',
-            'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'panopath'),
-            'username'  => env('DB_USERNAME', 'root'),
-            'password'  => env('DB_PASSWORD', '1129'),
+            'host'      => env('DB_HOST', '139.196.50.217'),
+            'database'  => env('DB_DATABASE', 'panoxiaoshou_prod'),
+            'username'  => env('DB_USERNAME', 'panoxiaoshou'),
+            'password'  => env('DB_PASSWORD', '607b83553314703cbc'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',

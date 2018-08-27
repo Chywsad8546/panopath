@@ -121,6 +121,6 @@
     <!-- Custom Theme JavaScript -->
     <script src="js/custom.min.js"></script>
     <!-- Menu Plugin JavaScript -->
-    <script src="{{asset('sidebar-nav/dist/sidebar-nav.min.js')}}"></script>
+    <script src="sidebar-nav/dist/sidebar-nav.min.js"></script>
 </body>
 </html>

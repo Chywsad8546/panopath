@@ -11,11 +11,11 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
     <title>Panopath</title>
     <!-- Bootstrap Core CSS -->
-    <link href="{{ asset('bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <!-- color CSS -->
-    <link href="{{ asset('css/colors/blue-dark.css') }}" id="theme" rel="stylesheet">
+    <link href="css/colors/blue-dark.css" id="theme" rel="stylesheet">
 </head>
 
 <body class="fix-header">
@@ -74,14 +74,14 @@
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src=" {{ asset('js/jquery.min.js') }}"></script>
+        <script src="js/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src=" {{ asset('bootstrap/dist/js/bootstrap.min.js') }}"></script>
+        <script src="bootstrap/dist/js/bootstrap.min.js"></script>
     <!--slimscroll JavaScript -->
-    <script src="{{ asset('js/jquery.slimscroll.js') }}"></script>
+        <script src="js/jquery.slimscroll.js"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="{{ asset('js/custom.min.js')}} "></script>
+        <script src="js/custom.min.js"></script>
         <!-- Menu Plugin JavaScript -->
-        <script src="{{asset('sidebar-nav/dist/sidebar-nav.min.js')}}"></script>
+        <script src="sidebar-nav/dist/sidebar-nav.min.js"></script>
 </body>
 </html>

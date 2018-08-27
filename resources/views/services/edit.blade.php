@@ -79,12 +79,12 @@
 
     <script src="js/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src=" bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
     <!--slimscroll JavaScript -->
     <script src="js/jquery.slimscroll.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="js/custom.min.js "></script>
         <!-- Menu Plugin JavaScript -->
-        <script src="asset('sidebar-nav/dist/sidebar-nav.min.js"></script>
+        <script src="sidebar-nav/dist/sidebar-nav.min.js"></script>
 </body>
 </html>

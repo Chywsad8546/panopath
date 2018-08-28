@@ -13,18 +13,18 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
     <title>Panopath</title>
     <!-- Bootstrap Core CSS -->
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Footable CSS -->
-    <link href="footable/css/footable.core.css" rel="stylesheet">
-    <link href="bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="/footable/css/footable.core.css" rel="stylesheet">
+    <link href="/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
     <!-- Menu CSS -->
-    <link href="sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <link href="/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
     <!-- animation CSS -->
-    <link href="css/animate.css" rel="stylesheet">
+    <link href="/css/animate.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
     <!-- color CSS -->
-    <link href="css/colors/blue-dark.css" id="theme" rel="stylesheet">
+    <link href="/css/colors/blue-dark.css" id="theme" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>sidebar
@@ -212,41 +212,41 @@
     </div>
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src="js/jquery.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <!-- Menu Plugin JavaScript -->
-    <script src="sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <script src="/sidebar-nav/dist/sidebar-nav.min.js"></script>
 
     <!--slimscroll JavaScript -->
-    <script src="js/jquery.slimscroll.js"></script>
+    <script src="/js/jquery.slimscroll.js"></script>
 
     <!--Wave Effects -->
-    <script src="js/waves.js"></script>
+    <script src="/js/waves.js"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="js/custom.min.js"></script>
+    <script src="/js/custom.min.js"></script>
 
-    <script src="custom-select/custom-select.min.js" type="text/javascript"></script>
+    <script src="/custom-select/custom-select.min.js" type="text/javascript"></script>
 
 
     <!-- Footable -->
     <!--   <script src="footable/js/footable.all.min.js"></script>-->
-    <script src="bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
+    <script src="/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
 
-    <script src="bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
+    <script src="/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
 
-    <script type="text/javascript" src="multiselect/js/jquery.multi-select.js"></script>
+    <script type="text/javascript" src="/multiselect/js/jquery.multi-select.js"></script>
 
     <!--FooTable init-->
 
     <!--//分页-->
    <!-- <script src="js/footable-init.js"></script>-->
 
-    <script src="switchery/dist/switchery.min.js"></script>
+    <script src="/switchery/dist/switchery.min.js"></script>
 
     <!--Style Switcher -->
-    <script src="js/jQuery.style.switcher.js"></script>
+    <script src="/js/jQuery.style.switcher.js"></script>
 
 </body>
 

@@ -83,7 +83,7 @@
     <!--slimscroll JavaScript -->
     <script src="/js/jquery.slimscroll.js"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="/js/custom.min.jstyle.js"></script>
+    <script src="/js/custom.min.js"></script>
         <!-- Menu Plugin JavaScript -->
         <script src="/sidebar-nav/dist/sidebar-nav.min.js"></script>
 </body>

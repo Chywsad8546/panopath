@@ -13,7 +13,7 @@
     <!-- Bootstrap Core CSS -->
     <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="/css/style.css'" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
     <!-- color CSS -->
     <link href="/css/colors/blue-dark.css" id="theme" rel="stylesheet">
 </head>
@@ -83,7 +83,7 @@
     <!--slimscroll JavaScript -->
     <script src="/js/jquery.slimscroll.js"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="/js/custom.min.js "></script>
+    <script src="/js/custom.min.jstyle.css"></script>
         <!-- Menu Plugin JavaScript -->
         <script src="/sidebar-nav/dist/sidebar-nav.min.js"></script>
 </body>

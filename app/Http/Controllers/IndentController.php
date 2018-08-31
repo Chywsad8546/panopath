@@ -78,9 +78,10 @@ class IndentController extends Controller {
     {
         if (session()->has('username')) 
         {
-            $sales = DB::select("select sales_amount.id as id,sales_amount.money,sales_amount.type_id,
+            $sqlString = "select sales_amount.id as id,sales_amount.money,sales_amount.type_id,
                                        sales_amount.bonus_money,sales_amount.sourcesId,services.id as sid,services.`name` 
-                                       from sales_amount LEFT JOIN services ON sales_amount.type_id = services.id where userName = $id");
+                                       from sales_amount LEFT JOIN services ON sales_amount.type_id = services.id where userName like ?";
+            $sales = DB::select($sqlString, [$id]);
             $bonusMoneyCount=0;
             foreach ($sales as $item) {
                 $bonusMoneyCount+=$item->bonus_money;
@@ -88,7 +89,7 @@ class IndentController extends Controller {
             return view('detail', [
                 'sales'=>$sales,
                  'userName'=>$id,
-                'bonusMoneyCount'=>$bonusMoneyCount
+                'bonusMoneyCount'=>$bonusMoneyCount,
                 ]);
         }
         else

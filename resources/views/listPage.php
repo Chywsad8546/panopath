@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon.png">
     <title>Panopath</title>
     <!-- Bootstrap Core CSS -->
     <link href="/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -108,19 +108,26 @@
                                         foreach($qrcode as $item) {
                                             echo " <tr><td>$item->sourceId</td><td>";
                                             if ($item->username!="无对应销售"){
-                                                $url = "127.0.0.1:9371/private-api/get-avatar-url-by-mp-open-id?openid=$item->openid";
-                                                $ch = curl_init();
-                                                curl_setopt($ch, CURLOPT_URL, $url);
-                                                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-                                                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-                                                $response = json_decode(curl_exec($ch));
-                                                curl_close($ch);
+                                                $env=env("APP_env");
+                                                echo("<script>console.log(".json_encode($env).");</script>");
+                                                if ($env=="local"){
+                                                    $img_url="/img/genu.jpg";
+                                                }else{
+                                                    $url = "127.0.0.1:9371/private-api/get-avatar-url-by-mp-open-id?openid=$item->openid";
+                                                    $ch = curl_init();
+                                                    curl_setopt($ch, CURLOPT_URL, $url);
+                                                    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                                                    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+                                                    $response = json_decode(curl_exec($ch));
+                                                    curl_close($ch);
 
-                                               if ($response->errNo!=0) {
-                                                   $response->img_url="img/jenu.jpg";
+                                                    if ($response->errNo!=0) {
+                                                        $img_url="/img/genu.jpg";
+                                                    }else{
+                                                        $img_url=$response->img_url;
+                                                    }
                                                 }
-                                                echo("<script>console.log(".json_encode($response).");</script>");
-                                                echo "<a href='/details/$item->username'><img src=\"$response->img_url\"  alt=\"user\" class=\"img-circle\" />$item->username</a>";
+                                                echo "<a href='/details/$item->username'><img src=\"$img_url\"  alt=\"user\" class=\"img-circle\" />$item->username</a>";
                                             }
                                             else{
                                                 echo "<a href='javascript:void(0);'>$item->username</a>";

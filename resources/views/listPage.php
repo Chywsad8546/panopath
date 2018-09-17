@@ -108,7 +108,7 @@
                                         foreach($qrcode as $item) {
                                             echo " <tr><td>$item->sourceId</td><td>";
                                             if ($item->username!="无对应销售"){
-                                                $url = "curl 127.0.0.1:9371/private-api/get-avatar-url-by-mp-open-id?openid=$item->openid";
+                                                $url = "127.0.0.1:9371/private-api/get-avatar-url-by-mp-open-id?openid=$item->openid";
                                                 $ch = curl_init();
                                                 curl_setopt($ch, CURLOPT_URL, $url);
                                                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

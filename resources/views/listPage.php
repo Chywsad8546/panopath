@@ -117,10 +117,10 @@
                                                 curl_close($ch);
 
                                                if (empty(@$response->errNo)) {
-                                                    return $response->img_url;
+                                                    return $response->img_url=1;
                                                 }
                                                 echo("<script>console.log(".json_encode($response).");</script>");
-                                                echo "<a href='/details/$item->username'><img src=\"../plugins/images/users/genu.jpg\"  alt=\"user\" class=\"img-circle\" />$item->username</a>";
+                                                echo "<a href='/details/$item->username'><img src=\"$response->img_url\"  alt=\"user\" class=\"img-circle\" />$item->username</a>";
                                             }
                                             else{
                                                 echo "<a href='javascript:void(0);'>$item->username</a>";

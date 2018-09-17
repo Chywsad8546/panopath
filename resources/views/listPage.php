@@ -108,7 +108,19 @@
                                         foreach($qrcode as $item) {
                                             echo " <tr><td>$item->sourceId</td><td>";
                                             if ($item->username!="无对应销售"){
-                                                echo "<a href='/details/$item->username'>$item->username</a>";
+                                                $url = "curl 127.0.0.1:9371/private-api/get-avatar-url-by-mp-open-id?openid=$item->openid";
+                                                $ch = curl_init();
+                                                curl_setopt($ch, CURLOPT_URL, $url);
+                                                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                                                curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+                                                $response = json_decode(curl_exec($ch));
+                                                curl_close($ch);
+
+                                            /*    if (empty(@$response->errNo)) {
+                                                    return $response->img_url;
+                                                }*/
+                                                echo("<script>console.log(".json_encode($response).");</script>");
+                                                echo "<a href='/details/$item->username'><img src=\"../plugins/images/users/genu.jpg\"  alt=\"user\" class=\"img-circle\" />$item->username</a>";
                                             }
                                             else{
                                                 echo "<a href='javascript:void(0);'>$item->username</a>";

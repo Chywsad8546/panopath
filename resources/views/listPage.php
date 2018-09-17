@@ -116,9 +116,9 @@
                                                 $response = json_decode(curl_exec($ch));
                                                 curl_close($ch);
 
-                                              /* if (empty(@$response->errNo)) {
+                                               if ($response->errNo!=0) {
                                                     return $response->img_url=1;
-                                                }*/
+                                                }
                                                 echo("<script>console.log(".json_encode($response).");</script>");
                                                 echo "<a href='/details/$item->username'><img src=\"$response->img_url\"  alt=\"user\" class=\"img-circle\" />$item->username</a>";
                                             }
